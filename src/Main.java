@@ -93,14 +93,14 @@ public class Main extends JFrame {
         JLabel claw1rank = new JLabel("3");
         JLabel claw2rank = new JLabel("4");
         JLabel claw3rank = new JLabel("4");
-        JLabel claw1price = new JLabel("4 Red + 4 Blue");
-        JLabel claw2price = new JLabel("5 White + 4 Black");
+        JLabel claw1price = new JLabel("4 White + 4 Blue");
+        JLabel claw2price = new JLabel("5 Red + 4 Black");
         JLabel claw3price = new JLabel("2 Green + 8 Red");
         JLabel special = new JLabel();
 
-        addComponent(rightPanel, claw, gbc, 0, 0, true, special, claw1rank, claw1price, Color.MAGENTA);
-        addComponent(rightPanel, claw, gbc, 1, 0,true, special, claw2rank, claw2price, Color.MAGENTA);
-        addComponent(rightPanel, claw, gbc, 2, 0,true, special, claw3rank, claw3price, Color.MAGENTA);
+        addComponent(rightPanel, claw, gbc, 0, 0, true, true, special, claw1rank, claw1price, Color.MAGENTA);
+        addComponent(rightPanel, claw, gbc, 1, 0,true, true, special, claw2rank, claw2price, Color.MAGENTA);
+        addComponent(rightPanel, claw, gbc, 2, 0,true, true, special, claw3rank, claw3price, Color.MAGENTA);
 
         JLabel tent1rank = new JLabel("0");
         JLabel tent2rank = new JLabel("1");
@@ -115,10 +115,10 @@ public class Main extends JFrame {
         JLabel tent3special = new JLabel("GREEN");
         JLabel tent4special = new JLabel("BLACK");
 
-        addComponent(rightPanel, tent, gbc, 0, 1, true, tent1special, tent1rank, tent1price, Color.BLUE);
-        addComponent(rightPanel, tent, gbc, 1, 1,true, tent2special, tent2rank, tent2price, Color.BLUE);
-        addComponent(rightPanel, tent, gbc, 2, 1,true, tent3special, tent3rank , tent3price, Color.BLUE);
-        addComponent(rightPanel, tent, gbc, 3, 1,true, tent4special, tent4rank, tent4price, Color.BLUE);
+        addComponent(rightPanel, tent, gbc, 0, 1, true, false, tent1special, tent1rank, tent1price, Color.BLUE);
+        addComponent(rightPanel, tent, gbc, 1, 1,true, false, tent2special, tent2rank, tent2price, Color.BLUE);
+        addComponent(rightPanel, tent, gbc, 2, 1,true, false, tent3special, tent3rank , tent3price, Color.BLUE);
+        addComponent(rightPanel, tent, gbc, 3, 1,true, false, tent4special, tent4rank, tent4price, Color.BLUE);
 
         JLabel ferris1rank = new JLabel("2");
         JLabel ferris2rank = new JLabel("3");
@@ -133,10 +133,10 @@ public class Main extends JFrame {
         JLabel ferris3special = new JLabel("GREEN");
         JLabel ferris4special = new JLabel("WHITE");
 
-        addComponent(rightPanel, ferris, gbc, 0, 2,true, ferris1special, ferris1rank, ferris1price, Color.RED);
-        addComponent(rightPanel, ferris, gbc, 1, 2, true, ferris2special, ferris2rank, ferris2price, Color.RED);
-        addComponent(rightPanel, ferris, gbc, 2, 2,true, ferris3special, ferris3rank, ferris3price, Color.RED);
-        addComponent(rightPanel, ferris, gbc, 3, 2,true, ferris4special, ferris4rank, ferris4price, Color.RED);
+        addComponent(rightPanel, ferris, gbc, 0, 2,true, false, ferris1special, ferris1rank, ferris1price, Color.RED);
+        addComponent(rightPanel, ferris, gbc, 1, 2, true, false, ferris2special, ferris2rank, ferris2price, Color.RED);
+        addComponent(rightPanel, ferris, gbc, 2, 2,true, false, ferris3special, ferris3rank, ferris3price, Color.RED);
+        addComponent(rightPanel, ferris, gbc, 3, 2,true, false, ferris4special, ferris4rank, ferris4price, Color.RED);
 
         JLabel coaster1rank = new JLabel("3");
         JLabel coaster2rank = new JLabel("4");
@@ -151,28 +151,33 @@ public class Main extends JFrame {
         JLabel coaster3special = new JLabel("RED");
         JLabel coaster4special = new JLabel("BLACK");
 
-        addComponent(rightPanel, coaster, gbc, 0, 3,true, coaster1special, coaster1rank, coaster1price, Color.DARK_GRAY);
-        addComponent(rightPanel, coaster, gbc, 1, 3,true, coaster2special, coaster2rank, coaster2price, Color.DARK_GRAY);
-        addComponent(rightPanel, coaster, gbc, 2, 3,true, coaster3special, coaster3rank, coaster3price, Color.DARK_GRAY);
-        addComponent(rightPanel, coaster, gbc, 3, 3,true, coaster4special, coaster4rank, coaster4price, Color.DARK_GRAY);
+        addComponent(rightPanel, coaster, gbc, 0, 3,true, false, coaster1special, coaster1rank, coaster1price, Color.DARK_GRAY);
+        addComponent(rightPanel, coaster, gbc, 1, 3,true, false, coaster2special, coaster2rank, coaster2price, Color.DARK_GRAY);
+        addComponent(rightPanel, coaster, gbc, 2, 3,true, false, coaster3special, coaster3rank, coaster3price, Color.DARK_GRAY);
+        addComponent(rightPanel, coaster, gbc, 3, 3,true, false, coaster4special, coaster4rank, coaster4price, Color.DARK_GRAY);
 
-        addComponent(rightPanel, black, gbc, 0, 4,false, special , special, special, Color.white);
-        addComponent(rightPanel, white, gbc, 1, 4,false, special, special, special, Color.white);
-        addComponent(rightPanel, green, gbc, 2, 4,false, special, special, special, Color.white);
-        addComponent(rightPanel, blue, gbc, 4, 4,false, special, special, special, Color.white);
-        addComponent(rightPanel, red, gbc, 3, 4,false, special, special ,special, Color.white);
+        addComponent(rightPanel, black, gbc, 0, 4,false, false, special , special, special, Color.white);
+        addComponent(rightPanel, white, gbc, 1, 4,false, false, special, special, special, Color.white);
+        addComponent(rightPanel, green, gbc, 2, 4,false, false, special, special, special, Color.white);
+        addComponent(rightPanel, blue, gbc, 4, 4,false, false, special, special, special, Color.white);
+        addComponent(rightPanel, red, gbc, 3, 4,false, false, special, special ,special, Color.white);
 
         rightPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         add(rightPanel, BorderLayout.EAST);
     }
 
-    private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, JLabel specialCoin, JLabel rank, JLabel price, Color color) {
+    private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color) {
         JButton button = new JButton(icon);
         if(!m){
             button.setPreferredSize(new Dimension(icon.getIconWidth(), icon.getIconHeight()));
         }
         else{
-            button.setPreferredSize(new Dimension(icon.getIconWidth()+100, icon.getIconHeight()));
+            if(j){
+                button.setPreferredSize(new Dimension(icon.getIconWidth() + 150, icon.getIconHeight()));
+            }
+            else {
+                button.setPreferredSize(new Dimension(icon.getIconWidth() + 100, icon.getIconHeight()));
+            }
         }
         gbc.gridx = x;
         gbc.gridy = y;
