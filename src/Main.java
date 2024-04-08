@@ -1,7 +1,10 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.net.URL;
+import coins.coins;
+import cards.card;
+import prizeClaw.prizeClawCards;
+import player.player;
 
 public class Main extends JFrame {
     public Main() {
@@ -169,7 +172,8 @@ public class Main extends JFrame {
     }
 
     private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color ) {
-
+        JPanel cardCase = new JPanel(new BorderLayout());
+        //making the buttons
         JButton button = new JButton(icon);
         if(!m){
             button.setPreferredSize(new Dimension(icon.getIconWidth(), icon.getIconHeight()));
@@ -184,6 +188,7 @@ public class Main extends JFrame {
         }
         gbc.gridx = x;
         gbc.gridy = y;
+        //adding labels on the card
         Font font = new Font(Font.SERIF, Font.PLAIN, 13);
         Font fontRank = new Font(Font.DIALOG, Font.BOLD, 20);
         specialCoin.setFont(font);
@@ -196,7 +201,11 @@ public class Main extends JFrame {
         button.add(price,BorderLayout.SOUTH);
         button.add(rank,BorderLayout.NORTH);
         button.add(specialCoin,BorderLayout.WEST);
+        //adding labels under the cards
+
+        cardCase.add(button,BorderLayout.CENTER);
         panel.add(button, gbc);
+
     }
 
 

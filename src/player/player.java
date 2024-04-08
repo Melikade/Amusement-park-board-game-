@@ -1,23 +1,36 @@
 package player;
 
 public class player {
-    private static int turnPlayer;
-    private int greenRegCoin;
-    private int blueRegCoin;
-    private int whiteRegCoin;
-    private int blackRegCoin;
-    private int greenSpecCoin;
-    private int blueSpecCoin;
-    private int whiteSpecCoin;
-    private int blackSpecCoin;
-    private int goldCoin;
-    private int points;
-    private int numOfReserves;
-    public int reserveRank;
-    public String reserveSpecial;
-    public String reservePrice;
+    public static int turnPlayer=1;
+    public int greenRegCoin=0;
+    public int blueRegCoin=0;
+    public int whiteRegCoin=0;
+    public int blackRegCoin=0;
+    public int greenSpecCoin=0;
+    public int blueSpecCoin=0;
+    public int whiteSpecCoin=0;
+    public int blackSpecCoin=0;
+    public int goldCoin=0;
+    private int points=0;
+    private int numOfReserves=0;
+    public int[] reserveRank;
+    public String[] reserveSpecial;
+    public String[] reservePrice;
 
 
+    public int getPoints() {
+        return points;
+    }
 
+    public void setPoints(int points) {
+        this.points = points;
+    }
 
+    public int getNumOfReserves() {
+        return numOfReserves;
+    }
+
+    public void setNumOfReserves(int numOfReserves) {
+        this.numOfReserves = numOfReserves;
+    }
 }
