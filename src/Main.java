@@ -5,7 +5,7 @@ import java.net.URL;
 
 public class Main extends JFrame {
     public Main() {
-        setSize(1400, 900);
+        setSize(1610, 950);
         setLocationRelativeTo(null);
         setTitle("Amusement Park Game");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -16,18 +16,20 @@ public class Main extends JFrame {
     }
 
     private void initLeftPanel() {
-        JPanel leftPanel = new JPanel(new GridLayout(10, 1, 15, 10));
-        JLabel player1 = new JLabel("«Player one»");
-        JLabel coins = new JLabel("Coins:");
-        JLabel specialCoins = new JLabel("Special coins:");
+        JPanel leftPanel = new JPanel(new GridLayout(10, 0, 0, 10));
+        JLabel player1 = new JLabel("«PLAYER ONE»");
+        int green1=0, white1=0, black1=0, red1=0, blue1=0;
+        JLabel coins = new JLabel("Coins: "+"Green="+green1+", White="+white1+", Black="+black1+", red="+red1+", blue="+blue1+" ");
+        //int green1=0, white1=0, black1=0, red1=0, blue1=0;
+        JLabel specialCoins = new JLabel("Special Coins: "+"Green="+green1+", White="+white1+", Black="+black1+", red="+red1+", blue="+blue1+" ");
         JLabel reservation = new JLabel("Reserved cards:");
         JLabel points = new JLabel("Points:");
-        JLabel player2 = new JLabel("«Player two»");
+        JLabel player2 = new JLabel("«PLAYER TWO»");
         JLabel coins2 = new JLabel("Coins:");
         JLabel specialCoins2 = new JLabel("Special coins:");
         JLabel reservation2 = new JLabel("Reserved cards:");
         JLabel points2 = new JLabel("Points:");
-        Font font = new Font(Font.SERIF, Font.PLAIN, 18);
+        Font font = new Font(Font.DIALOG, Font.PLAIN, 15);
         labels(player1, coins, specialCoins, reservation, points, font, Color.red, Color.pink);
         labels(player2, coins2, specialCoins2, reservation2, points2, font, Color.BLACK, Color.GRAY);
         leftPanel.add(player1);
@@ -159,14 +161,15 @@ public class Main extends JFrame {
         addComponent(rightPanel, black, gbc, 0, 4,false, false, special , special, special, Color.white);
         addComponent(rightPanel, white, gbc, 1, 4,false, false, special, special, special, Color.white);
         addComponent(rightPanel, green, gbc, 2, 4,false, false, special, special, special, Color.white);
-        addComponent(rightPanel, blue, gbc, 4, 4,false, false, special, special, special, Color.white);
-        addComponent(rightPanel, red, gbc, 3, 4,false, false, special, special ,special, Color.white);
+        addComponent(rightPanel, blue, gbc, 3, 4,false, false, special, special, special, Color.white);
+        addComponent(rightPanel, red, gbc, 4, 4,false, false, special, special ,special, Color.white);
 
         rightPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         add(rightPanel, BorderLayout.EAST);
     }
 
-    private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color) {
+    private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color ) {
+
         JButton button = new JButton(icon);
         if(!m){
             button.setPreferredSize(new Dimension(icon.getIconWidth(), icon.getIconHeight()));
