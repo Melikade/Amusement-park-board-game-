@@ -7,18 +7,24 @@ import prizeClaw.prizeClawCards;
 import player.player;
 
 public class Main extends JFrame {
+    card cards = new card();
+    coins coins = new coins();
+    prizeClawCards prizeClaw = new prizeClawCards();
     public Main() {
-        setSize(1610, 950);
+        setSize(1650, 950);
         setLocationRelativeTo(null);
         setTitle("Amusement Park Game");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         initLeftPanel();
         initRightPanel();
+        card cards = new card();
+        coins coins = new coins();
         this.setVisible(true);
     }
 
     private void initLeftPanel() {
+
         JPanel leftPanel = new JPanel(new GridLayout(10, 0, 0, 10));
         JLabel player1 = new JLabel("«PLAYER ONE»");
         int green1=0, white1=0, black1=0, red1=0, blue1=0;
@@ -103,9 +109,9 @@ public class Main extends JFrame {
         JLabel claw3price = new JLabel("2 Green + 8 Red");
         JLabel special = new JLabel();
 
-        addComponent(rightPanel, claw, gbc, 0, 0, true, true, special, claw1rank, claw1price, Color.MAGENTA);
-        addComponent(rightPanel, claw, gbc, 1, 0,true, true, special, claw2rank, claw2price, Color.MAGENTA);
-        addComponent(rightPanel, claw, gbc, 2, 0,true, true, special, claw3rank, claw3price, Color.MAGENTA);
+        addComponent(rightPanel, claw, gbc, 0, 0, true, true, special, claw1rank, claw1price, Color.MAGENTA, prizeClaw.getClaw1());
+        addComponent(rightPanel, claw, gbc, 1, 0,true, true, special, claw2rank, claw2price, Color.MAGENTA, prizeClaw.getClaw2());
+        addComponent(rightPanel, claw, gbc, 2, 0,true, true, special, claw3rank, claw3price, Color.MAGENTA, prizeClaw.getClaw3());
 
         JLabel tent1rank = new JLabel("0");
         JLabel tent2rank = new JLabel("1");
@@ -120,10 +126,10 @@ public class Main extends JFrame {
         JLabel tent3special = new JLabel("GREEN");
         JLabel tent4special = new JLabel("BLACK");
 
-        addComponent(rightPanel, tent, gbc, 0, 1, true, false, tent1special, tent1rank, tent1price, Color.BLUE);
-        addComponent(rightPanel, tent, gbc, 1, 1,true, false, tent2special, tent2rank, tent2price, Color.BLUE);
-        addComponent(rightPanel, tent, gbc, 2, 1,true, false, tent3special, tent3rank , tent3price, Color.BLUE);
-        addComponent(rightPanel, tent, gbc, 3, 1,true, false, tent4special, tent4rank, tent4price, Color.BLUE);
+        addComponent(rightPanel, tent, gbc, 0, 1, true, false, tent1special, tent1rank, tent1price, Color.BLUE, true, cards.getTent1(), 0);
+        addComponent(rightPanel, tent, gbc, 1, 1,true, false, tent2special, tent2rank, tent2price, Color.BLUE, true, cards.getTent2(), 0);
+        addComponent(rightPanel, tent, gbc, 2, 1,true, false, tent3special, tent3rank , tent3price, Color.BLUE,true, cards.getTent3(), 0);
+        addComponent(rightPanel, tent, gbc, 3, 1,true, false, tent4special, tent4rank, tent4price, Color.BLUE, true, cards.getTent4(), 0);
 
         JLabel ferris1rank = new JLabel("2");
         JLabel ferris2rank = new JLabel("3");
@@ -138,10 +144,10 @@ public class Main extends JFrame {
         JLabel ferris3special = new JLabel("GREEN");
         JLabel ferris4special = new JLabel("WHITE");
 
-        addComponent(rightPanel, ferris, gbc, 0, 2,true, false, ferris1special, ferris1rank, ferris1price, Color.RED);
-        addComponent(rightPanel, ferris, gbc, 1, 2, true, false, ferris2special, ferris2rank, ferris2price, Color.RED);
-        addComponent(rightPanel, ferris, gbc, 2, 2,true, false, ferris3special, ferris3rank, ferris3price, Color.RED);
-        addComponent(rightPanel, ferris, gbc, 3, 2,true, false, ferris4special, ferris4rank, ferris4price, Color.RED);
+        addComponent(rightPanel, ferris, gbc, 0, 2,true, false, ferris1special, ferris1rank, ferris1price, Color.RED, true, cards.getFerris1(), 0);
+        addComponent(rightPanel, ferris, gbc, 1, 2, true, false, ferris2special, ferris2rank, ferris2price, Color.RED, true, cards.getFerris2(), 0);
+        addComponent(rightPanel, ferris, gbc, 2, 2,true, false, ferris3special, ferris3rank, ferris3price, Color.RED, true, cards.getFerris3(), 0);
+        addComponent(rightPanel, ferris, gbc, 3, 2,true, false, ferris4special, ferris4rank, ferris4price, Color.RED, true, cards.getFerris4(), 0);
 
         JLabel coaster1rank = new JLabel("3");
         JLabel coaster2rank = new JLabel("4");
@@ -156,22 +162,22 @@ public class Main extends JFrame {
         JLabel coaster3special = new JLabel("RED");
         JLabel coaster4special = new JLabel("BLACK");
 
-        addComponent(rightPanel, coaster, gbc, 0, 3,true, false, coaster1special, coaster1rank, coaster1price, Color.DARK_GRAY);
-        addComponent(rightPanel, coaster, gbc, 1, 3,true, false, coaster2special, coaster2rank, coaster2price, Color.DARK_GRAY);
-        addComponent(rightPanel, coaster, gbc, 2, 3,true, false, coaster3special, coaster3rank, coaster3price, Color.DARK_GRAY);
-        addComponent(rightPanel, coaster, gbc, 3, 3,true, false, coaster4special, coaster4rank, coaster4price, Color.DARK_GRAY);
+        addComponent(rightPanel, coaster, gbc, 0, 3,true, false, coaster1special, coaster1rank, coaster1price, Color.DARK_GRAY, true, cards.getCoaster1(), 0);
+        addComponent(rightPanel, coaster, gbc, 1, 3,true, false, coaster2special, coaster2rank, coaster2price, Color.DARK_GRAY, true, cards.getCoaster2(), 0);
+        addComponent(rightPanel, coaster, gbc, 2, 3,true, false, coaster3special, coaster3rank, coaster3price, Color.DARK_GRAY, true, cards.getCoaster3(), 0);
+        addComponent(rightPanel, coaster, gbc, 3, 3,true, false, coaster4special, coaster4rank, coaster4price, Color.DARK_GRAY, true, cards.getCoaster4(), 0);
 
-        addComponent(rightPanel, black, gbc, 0, 4,false, false, special , special, special, Color.white);
-        addComponent(rightPanel, white, gbc, 1, 4,false, false, special, special, special, Color.white);
-        addComponent(rightPanel, green, gbc, 2, 4,false, false, special, special, special, Color.white);
-        addComponent(rightPanel, blue, gbc, 3, 4,false, false, special, special, special, Color.white);
-        addComponent(rightPanel, red, gbc, 4, 4,false, false, special, special ,special, Color.white);
+        addComponent(rightPanel, black, gbc, 0, 4,false, false, special , special, special, Color.BLACK, false, 0, coins.getBlack());
+        addComponent(rightPanel, white, gbc, 1, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getWhite());
+        addComponent(rightPanel, green, gbc, 2, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getGreen());
+        addComponent(rightPanel, blue, gbc, 3, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getBlue());
+        addComponent(rightPanel, red, gbc, 4, 4,false, false, special, special ,special, Color.BLACK, false, 0, coins.getRed());
 
         rightPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         add(rightPanel, BorderLayout.EAST);
     }
 
-    private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color ) {
+    private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color, boolean cardOrMach, int cardRemaining, int coinRemaining) {
         JPanel cardCase = new JPanel(new BorderLayout());
         //making the buttons
         JButton button = new JButton(icon);
@@ -202,9 +208,59 @@ public class Main extends JFrame {
         button.add(rank,BorderLayout.NORTH);
         button.add(specialCoin,BorderLayout.WEST);
         //adding labels under the cards
-
+        if( cardOrMach ) {
+            JLabel underLabel = new JLabel("Remaining cards="+cardRemaining);
+            underLabel.setFont(font);
+            underLabel.setForeground(color);
+            cardCase.add(underLabel,BorderLayout.SOUTH);
+        }
+        else {
+            JLabel underMachLabel = new JLabel("Remaining coins="+coinRemaining);
+            underMachLabel.setFont(font);
+            underMachLabel.setForeground(color);
+            cardCase.add(underMachLabel,BorderLayout.SOUTH);
+        }
         cardCase.add(button,BorderLayout.CENTER);
-        panel.add(button, gbc);
+        panel.add(cardCase, gbc);
+
+    }
+    private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color, int clawRemaining) {
+        JPanel cardCase = new JPanel(new BorderLayout());
+        //making the buttons
+        JButton button = new JButton(icon);
+        if(!m){
+            button.setPreferredSize(new Dimension(icon.getIconWidth(), icon.getIconHeight()));
+        }
+        else{
+            if(j){
+                button.setPreferredSize(new Dimension(icon.getIconWidth() + 150, icon.getIconHeight()));
+            }
+            else  {
+                button.setPreferredSize(new Dimension(icon.getIconWidth() + 100, icon.getIconHeight()));
+            }
+        }
+        gbc.gridx = x;
+        gbc.gridy = y;
+        //adding labels on the card
+        Font font = new Font(Font.SERIF, Font.PLAIN, 13);
+        Font fontRank = new Font(Font.DIALOG, Font.BOLD, 20);
+        specialCoin.setFont(font);
+        rank.setFont(fontRank);
+        price.setFont(font);
+        specialCoin.setForeground(color);
+        rank.setForeground(color);
+        price.setForeground(color);
+        button.setLayout(new BorderLayout());
+        button.add(price,BorderLayout.SOUTH);
+        button.add(rank,BorderLayout.NORTH);
+        button.add(specialCoin,BorderLayout.WEST);
+        //adding labels under the cards
+        JLabel underLabel = new JLabel("Remaining cards="+clawRemaining);
+        underLabel.setFont(font);
+        underLabel.setForeground(color);
+        cardCase.add(underLabel,BorderLayout.SOUTH);
+        cardCase.add(button,BorderLayout.CENTER);
+        panel.add(cardCase, gbc);
 
     }
 
