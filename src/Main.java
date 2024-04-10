@@ -10,52 +10,54 @@ public class Main extends JFrame {
     card cards = new card();
     coins coins = new coins();
     prizeClawCards prizeClaw = new prizeClawCards();
+    player player1 = new player();
+    player player2 = new player();
     public Main() {
-        setSize(1650, 950);
+        setSize(1700, 955);
         setLocationRelativeTo(null);
         setTitle("Amusement Park Game");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         initLeftPanel();
         initRightPanel();
-        card cards = new card();
-        coins coins = new coins();
         this.setVisible(true);
     }
 
     private void initLeftPanel() {
 
-        JPanel leftPanel = new JPanel(new GridLayout(10, 0, 0, 10));
-        JLabel player1 = new JLabel("«PLAYER ONE»");
-        int green1=0, white1=0, black1=0, red1=0, blue1=0;
-        JLabel coins = new JLabel("Coins: "+"Green="+green1+", White="+white1+", Black="+black1+", red="+red1+", blue="+blue1+" ");
-        //int green1=0, white1=0, black1=0, red1=0, blue1=0;
-        JLabel specialCoins = new JLabel("Special Coins: "+"Green="+green1+", White="+white1+", Black="+black1+", red="+red1+", blue="+blue1+" ");
+        JPanel leftPanel = new JPanel(new GridLayout(12, 0, 0, 10));
+        JLabel playerOne = new JLabel("«PLAYER ONE»");
+        JLabel coins = new JLabel("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
+        JLabel specialCoins = new JLabel("Special coins: "+"Green="+player1.greenSpecCoin+", White="+player1.whiteSpecCoin+", Black="+player1.blackSpecCoin+", red="+player1.redSpecCoin+", blue="+player1.blueSpecCoin+", Gold="+player1.goldCoin+" ");
         JLabel reservation = new JLabel("Reserved cards:");
         JLabel points = new JLabel("Points:");
-        JLabel player2 = new JLabel("«PLAYER TWO»");
-        JLabel coins2 = new JLabel("Coins:");
-        JLabel specialCoins2 = new JLabel("Special coins:");
+        JLabel numCard = new JLabel("Number of cards="+player1.getNumOfCards());
+        JLabel playerTwo = new JLabel("«PLAYER TWO»");
+        JLabel coins2 = new JLabel("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
+        JLabel specialCoins2 = new JLabel("Special coins: "+"Green="+player2.greenSpecCoin+", White="+player2.whiteSpecCoin+", Black="+player2.blackSpecCoin+", red="+player2.redSpecCoin+", blue="+player2.blueSpecCoin+", Gold="+player2.goldCoin+" ");
         JLabel reservation2 = new JLabel("Reserved cards:");
         JLabel points2 = new JLabel("Points:");
+        JLabel numCard2 = new JLabel("Number of cards="+player2.getNumOfCards());
         Font font = new Font(Font.DIALOG, Font.PLAIN, 15);
-        labels(player1, coins, specialCoins, reservation, points, font, Color.red, Color.pink);
-        labels(player2, coins2, specialCoins2, reservation2, points2, font, Color.BLACK, Color.GRAY);
-        leftPanel.add(player1);
+        labels(playerOne, coins, specialCoins, reservation, points, numCard, font, Color.red, Color.pink);
+        labels(playerTwo, coins2, specialCoins2, reservation2, points2, numCard2, font, Color.BLACK, Color.GRAY);
+        leftPanel.add(playerOne);
         leftPanel.add(coins);
         leftPanel.add(specialCoins);
         leftPanel.add(reservation);
         leftPanel.add(points);
-        leftPanel.add(player2);
+        leftPanel.add(numCard);
+        leftPanel.add(playerTwo);
         leftPanel.add(coins2);
         leftPanel.add(specialCoins2);
         leftPanel.add(reservation2);
         leftPanel.add(points2);
+        leftPanel.add(numCard2);
         leftPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         add(leftPanel, BorderLayout.WEST);
     }
 
-    public void labels(JLabel player1, JLabel coins, JLabel specialCoins, JLabel reservation, JLabel points, Font font, Color color, Color color2) {
+    public void labels(JLabel player1, JLabel coins, JLabel specialCoins, JLabel reservation, JLabel points, JLabel numOfCards, Font font, Color color, Color color2) {
         player1.setFont(font);
         player1.setHorizontalTextPosition(SwingConstants.HORIZONTAL);
         player1.setForeground(color);
@@ -81,6 +83,11 @@ public class Main extends JFrame {
         specialCoins.setForeground(color);
         specialCoins.setOpaque(true);
         specialCoins.setBackground(color2);
+        numOfCards.setFont(font);
+        numOfCards.setHorizontalTextPosition(SwingConstants.HORIZONTAL);
+        numOfCards.setForeground(color);
+        numOfCards.setOpaque(true);
+        numOfCards.setBackground(color2);
     }
 
     private void initRightPanel() {
@@ -209,13 +216,13 @@ public class Main extends JFrame {
         button.add(specialCoin,BorderLayout.WEST);
         //adding labels under the cards
         if( cardOrMach ) {
-            JLabel underLabel = new JLabel("Remaining cards="+cardRemaining);
+            JLabel underLabel = new JLabel(" Remaining cards = "+cardRemaining);
             underLabel.setFont(font);
             underLabel.setForeground(color);
             cardCase.add(underLabel,BorderLayout.SOUTH);
         }
         else {
-            JLabel underMachLabel = new JLabel("Remaining coins="+coinRemaining);
+            JLabel underMachLabel = new JLabel(" Remaining coins = "+coinRemaining);
             underMachLabel.setFont(font);
             underMachLabel.setForeground(color);
             cardCase.add(underMachLabel,BorderLayout.SOUTH);
@@ -255,7 +262,7 @@ public class Main extends JFrame {
         button.add(rank,BorderLayout.NORTH);
         button.add(specialCoin,BorderLayout.WEST);
         //adding labels under the cards
-        JLabel underLabel = new JLabel("Remaining cards="+clawRemaining);
+        JLabel underLabel = new JLabel(" Remaining cards = "+clawRemaining);
         underLabel.setFont(font);
         underLabel.setForeground(color);
         cardCase.add(underLabel,BorderLayout.SOUTH);
