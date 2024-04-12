@@ -16,9 +16,9 @@ public class player {
     private int points=0;
     private int numOfReserves=0;
     private int numOfCards=0;
-    public int[] reserveRank;
-    public String[] reserveSpecial;
-    public String[] reservePrice;
+    public int[] reserveRank = new int[3];
+    public String[] reserveSpecial = new String[3];
+    public String[] reservePrice = new String[3];
 
 
     public int getPoints() {

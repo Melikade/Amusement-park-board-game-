@@ -24,19 +24,18 @@ public class Main extends JFrame {
     }
 
     private void initLeftPanel() {
-
         JPanel leftPanel = new JPanel(new GridLayout(12, 0, 0, 10));
         JLabel playerOne = new JLabel("«PLAYER ONE»");
         JLabel coins = new JLabel("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
         JLabel specialCoins = new JLabel("Special coins: "+"Green="+player1.greenSpecCoin+", White="+player1.whiteSpecCoin+", Black="+player1.blackSpecCoin+", red="+player1.redSpecCoin+", blue="+player1.blueSpecCoin+", Gold="+player1.goldCoin+" ");
-        JLabel reservation = new JLabel("Reserved cards:");
-        JLabel points = new JLabel("Points:");
+        JLabel reservation = new JLabel("Reserves:(Rank Price SpecialCoin)" +player1.reserveRank[0]+" "+ player1.reservePrice[0]+" "+ player1.reserveSpecial[0]+","+player1.reserveRank[1]+" "+ player1.reservePrice[1]+" "+ player1.reserveSpecial[1]+","+player1.reserveRank[2]+" "+ player1.reservePrice[2]+" "+ player1.reserveSpecial[2]+" ");
+        JLabel points = new JLabel("Points:"+player1.getPoints());
         JLabel numCard = new JLabel("Number of cards="+player1.getNumOfCards());
         JLabel playerTwo = new JLabel("«PLAYER TWO»");
         JLabel coins2 = new JLabel("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
         JLabel specialCoins2 = new JLabel("Special coins: "+"Green="+player2.greenSpecCoin+", White="+player2.whiteSpecCoin+", Black="+player2.blackSpecCoin+", red="+player2.redSpecCoin+", blue="+player2.blueSpecCoin+", Gold="+player2.goldCoin+" ");
-        JLabel reservation2 = new JLabel("Reserved cards:");
-        JLabel points2 = new JLabel("Points:");
+        JLabel reservation2 = new JLabel("Reserves:(Rank Price SpecialCoin)" +player2.reserveRank[0]+" "+ player2.reservePrice[0]+" "+ player2.reserveSpecial[0]+","+player2.reserveRank[1]+" "+ player2.reservePrice[1]+" "+ player2.reserveSpecial[1]+","+player2.reserveRank[2]+" "+ player2.reservePrice[2]+" "+ player2.reserveSpecial[2]+" ");
+        JLabel points2 = new JLabel("Points:"+player2.getPoints());
         JLabel numCard2 = new JLabel("Number of cards="+player2.getNumOfCards());
         Font font = new Font(Font.DIALOG, Font.PLAIN, 15);
         labels(playerOne, coins, specialCoins, reservation, points, numCard, font, Color.red, Color.pink);
@@ -53,7 +52,7 @@ public class Main extends JFrame {
         leftPanel.add(reservation2);
         leftPanel.add(points2);
         leftPanel.add(numCard2);
-        leftPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        leftPanel.setBorder(new EmptyBorder(10, 5, 10, 5));
         add(leftPanel, BorderLayout.WEST);
     }
 
@@ -96,7 +95,7 @@ public class Main extends JFrame {
         rightPanel.setLayout(new GridBagLayout());
 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.insets = new Insets(5, 5, 5, 5);
 
         ImageIcon black = new ImageIcon("pictures/black.png");
         ImageIcon red = new ImageIcon("pictures/red.png");
