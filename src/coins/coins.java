@@ -6,12 +6,16 @@ public class coins {
     private int black=4;
     private int white=4;
     private int red=4;
+    private int gold=5;
 
     public int getGreen() {
         return green;
     }
 
     public void setGreen(int green) {
+        if(green<0){
+            green=0;
+        }
         this.green = green;
     }
 
@@ -20,6 +24,9 @@ public class coins {
     }
 
     public void setBlue(int blue) {
+        if(blue<0){
+            blue=0;
+        }
         this.blue = blue;
     }
 
@@ -28,6 +35,9 @@ public class coins {
     }
 
     public void setBlack(int black) {
+        if(black<0){
+            black=0;
+        }
         this.black = black;
     }
 
@@ -36,6 +46,9 @@ public class coins {
     }
 
     public void setWhite(int white) {
+        if (white<0){
+            white=0;
+        }
         this.white = white;
     }
 
@@ -44,6 +57,20 @@ public class coins {
     }
 
     public void setRed(int red) {
+        if (red<0){
+            red=0;
+        }
         this.red = red;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        if(gold<0){
+            gold=0;
+        }
+        this.gold = gold;
     }
 }

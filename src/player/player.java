@@ -44,4 +44,46 @@ public class player {
     public void setNumOfCards(int numOfCards) {
         this.numOfCards = numOfCards;
     }
+
+    public void setBlackRegCoin(int blackRegCoin) {
+        if(blackRegCoin<0){
+            blackRegCoin=0;
+        }
+        this.blackRegCoin = blackRegCoin;
+    }
+
+    public void setBlueRegCoin(int blueRegCoin) {
+        if(blueRegCoin<0){
+            blueRegCoin=0;
+        }
+        this.blueRegCoin = blueRegCoin;
+    }
+
+    public void setGoldCoin(int goldCoin) {
+        if(goldCoin<0){
+            goldCoin=0;
+        }
+        this.goldCoin = goldCoin;
+    }
+
+    public void setGreenRegCoin(int greenRegCoin) {
+        if(greenRegCoin<0){
+            greenRegCoin=0;
+        }
+        this.greenRegCoin = greenRegCoin;
+    }
+
+    public void setRedRegCoin(int redRegCoin) {
+        if(redRegCoin<0){
+            redRegCoin=0;
+        }
+        this.redRegCoin = redRegCoin;
+    }
+
+    public void setWhiteRegCoin(int whiteRegCoin) {
+        if(whiteRegCoin<0){
+            whiteRegCoin=0;
+        }
+        this.whiteRegCoin = whiteRegCoin;
+    }
 }
