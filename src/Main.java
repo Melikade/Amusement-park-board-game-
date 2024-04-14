@@ -719,6 +719,7 @@ public class Main extends JFrame {
                 int card = cards.getTent1();
                 card--;
                 cards.setTent1(card);
+                setVisible(false);
             }
             else if (player1.redSpecCoin+player1.redRegCoin>=4){
                 int point = player1.getPoints();
@@ -736,6 +737,7 @@ public class Main extends JFrame {
                 int card = cards.getTent1();
                 card--;
                 cards.setTent1(card);
+                setVisible(false);
             }
             else if(player1.redRegCoin+player1.goldCoin>=4){
                 int point = player1.getPoints();
@@ -757,6 +759,7 @@ public class Main extends JFrame {
                 int card = cards.getTent1();
                 card--;
                 cards.setTent1(card);
+                setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -793,6 +796,7 @@ public class Main extends JFrame {
                 int card = cards.getTent3();
                 card--;
                 cards.setTent3(card);
+                setVisible(false);
             }
             else if(player1.blackRegCoin+player1.goldCoin>=5 && player1.greenRegCoin+player1.goldCoin>=1){
                 int point = player1.getPoints();
@@ -832,6 +836,7 @@ public class Main extends JFrame {
                 int card = cards.getTent3();
                 card--;
                 cards.setTent3(card);
+                setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -868,6 +873,7 @@ public class Main extends JFrame {
                 int card = cards.getTent2();
                 card--;
                 cards.setTent2(card);
+                setVisible(false);
             }
             else if(player1.blueRegCoin+player1.goldCoin>=3 && player1.whiteRegCoin+player1.goldCoin>=2){
                 int point = player1.getPoints();
@@ -907,6 +913,7 @@ public class Main extends JFrame {
                 int card = cards.getTent2();
                 card--;
                 cards.setTent2(card);
+                setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -994,7 +1001,6 @@ public class Main extends JFrame {
             player1.reserveRank[player1.getNumOfReserves()]=0;
             player1.reservePrice[player1.getNumOfReserves()]="4 Red";
             goldCoinCheck(player1);
-            setVisible(false);
         }
         else{
             JOptionPane.showMessageDialog(Main.this,"Sorry, this card is out of stock!");
@@ -1009,7 +1015,6 @@ public class Main extends JFrame {
             player1.reserveRank[player1.getNumOfReserves()]=1;
             player1.reservePrice[player1.getNumOfReserves()]="2 White + 3 Blue";
             goldCoinCheck(player1);
-            setVisible(false);
         }
         else{
             JOptionPane.showMessageDialog(Main.this,"Sorry, this card is out of stock!");
@@ -1167,6 +1172,7 @@ public class Main extends JFrame {
             coin--;
             coins.setGold(coin);
         }
+        setVisible(false);
     }
 
     //یارو کم کردن تعداد سکه ها متودش رو بنویسم
