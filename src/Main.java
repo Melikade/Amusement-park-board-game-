@@ -1,6 +1,9 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import coins.coins;
 import cards.card;
 import prizeClaw.prizeClawCards;
@@ -132,10 +135,10 @@ public class Main extends JFrame {
         JLabel tent3special = new JLabel("GREEN");
         JLabel tent4special = new JLabel("BLACK");
 
-        addComponent(rightPanel, tent, gbc, 0, 1, true, false, tent1special, tent1rank, tent1price, Color.BLUE, true, cards.getTent1(), 0);
-        addComponent(rightPanel, tent, gbc, 1, 1,true, false, tent2special, tent2rank, tent2price, Color.BLUE, true, cards.getTent2(), 0);
-        addComponent(rightPanel, tent, gbc, 2, 1,true, false, tent3special, tent3rank , tent3price, Color.BLUE,true, cards.getTent3(), 0);
-        addComponent(rightPanel, tent, gbc, 3, 1,true, false, tent4special, tent4rank, tent4price, Color.BLUE, true, cards.getTent4(), 0);
+        addComponent(rightPanel, tent, gbc, 0, 1, true, false, tent1special, tent1rank, tent1price, Color.BLUE, true, cards.getTent1(), 0, player.turnPlayer, " ");
+        addComponent(rightPanel, tent, gbc, 1, 1,true, false, tent2special, tent2rank, tent2price, Color.BLUE, true, cards.getTent2(), 0, player.turnPlayer, " ");
+        addComponent(rightPanel, tent, gbc, 2, 1,true, false, tent3special, tent3rank , tent3price, Color.BLUE,true, cards.getTent3(), 0, player.turnPlayer, " ");
+        addComponent(rightPanel, tent, gbc, 3, 1,true, false, tent4special, tent4rank, tent4price, Color.BLUE, true, cards.getTent4(), 0, player.turnPlayer, " ");
 
         JLabel ferris1rank = new JLabel("2");
         JLabel ferris2rank = new JLabel("3");
@@ -150,10 +153,10 @@ public class Main extends JFrame {
         JLabel ferris3special = new JLabel("GREEN");
         JLabel ferris4special = new JLabel("WHITE");
 
-        addComponent(rightPanel, ferris, gbc, 0, 2,true, false, ferris1special, ferris1rank, ferris1price, Color.RED, true, cards.getFerris1(), 0);
-        addComponent(rightPanel, ferris, gbc, 1, 2, true, false, ferris2special, ferris2rank, ferris2price, Color.RED, true, cards.getFerris2(), 0);
-        addComponent(rightPanel, ferris, gbc, 2, 2,true, false, ferris3special, ferris3rank, ferris3price, Color.RED, true, cards.getFerris3(), 0);
-        addComponent(rightPanel, ferris, gbc, 3, 2,true, false, ferris4special, ferris4rank, ferris4price, Color.RED, true, cards.getFerris4(), 0);
+        addComponent(rightPanel, ferris, gbc, 0, 2,true, false, ferris1special, ferris1rank, ferris1price, Color.RED, true, cards.getFerris1(), 0, player.turnPlayer, " ");
+        addComponent(rightPanel, ferris, gbc, 1, 2, true, false, ferris2special, ferris2rank, ferris2price, Color.RED, true, cards.getFerris2(), 0, player.turnPlayer, " ");
+        addComponent(rightPanel, ferris, gbc, 2, 2,true, false, ferris3special, ferris3rank, ferris3price, Color.RED, true, cards.getFerris3(), 0, player.turnPlayer, " ");
+        addComponent(rightPanel, ferris, gbc, 3, 2,true, false, ferris4special, ferris4rank, ferris4price, Color.RED, true, cards.getFerris4(), 0, player.turnPlayer, " ");
 
         JLabel coaster1rank = new JLabel("3");
         JLabel coaster2rank = new JLabel("4");
@@ -168,22 +171,22 @@ public class Main extends JFrame {
         JLabel coaster3special = new JLabel("RED");
         JLabel coaster4special = new JLabel("BLACK");
 
-        addComponent(rightPanel, coaster, gbc, 0, 3,true, false, coaster1special, coaster1rank, coaster1price, Color.DARK_GRAY, true, cards.getCoaster1(), 0);
-        addComponent(rightPanel, coaster, gbc, 1, 3,true, false, coaster2special, coaster2rank, coaster2price, Color.DARK_GRAY, true, cards.getCoaster2(), 0);
-        addComponent(rightPanel, coaster, gbc, 2, 3,true, false, coaster3special, coaster3rank, coaster3price, Color.DARK_GRAY, true, cards.getCoaster3(), 0);
-        addComponent(rightPanel, coaster, gbc, 3, 3,true, false, coaster4special, coaster4rank, coaster4price, Color.DARK_GRAY, true, cards.getCoaster4(), 0);
+        addComponent(rightPanel, coaster, gbc, 0, 3,true, false, coaster1special, coaster1rank, coaster1price, Color.DARK_GRAY, true, cards.getCoaster1(), 0, player.turnPlayer, " ");
+        addComponent(rightPanel, coaster, gbc, 1, 3,true, false, coaster2special, coaster2rank, coaster2price, Color.DARK_GRAY, true, cards.getCoaster2(), 0, player.turnPlayer, " ");
+        addComponent(rightPanel, coaster, gbc, 2, 3,true, false, coaster3special, coaster3rank, coaster3price, Color.DARK_GRAY, true, cards.getCoaster3(), 0, player.turnPlayer, " ");
+        addComponent(rightPanel, coaster, gbc, 3, 3,true, false, coaster4special, coaster4rank, coaster4price, Color.DARK_GRAY, true, cards.getCoaster4(), 0, player.turnPlayer," ");
 
-        addComponent(rightPanel, black, gbc, 0, 4,false, false, special , special, special, Color.BLACK, false, 0, coins.getBlack());
-        addComponent(rightPanel, white, gbc, 1, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getWhite());
-        addComponent(rightPanel, green, gbc, 2, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getGreen());
-        addComponent(rightPanel, blue, gbc, 3, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getBlue());
-        addComponent(rightPanel, red, gbc, 4, 4,false, false, special, special ,special, Color.BLACK, false, 0, coins.getRed());
+        addComponent(rightPanel, black, gbc, 0, 4,false, false, special , special, special, Color.BLACK, false, 0, coins.getBlack(), player.turnPlayer,"black");
+        addComponent(rightPanel, white, gbc, 1, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getWhite(), player.turnPlayer, "white");
+        addComponent(rightPanel, green, gbc, 2, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getGreen(),player.turnPlayer, "green");
+        addComponent(rightPanel, blue, gbc, 3, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getBlue(),player.turnPlayer, "blue");
+        addComponent(rightPanel, red, gbc, 4, 4,false, false, special, special ,special, Color.BLACK, false, 0, coins.getRed(), player.turnPlayer, "red");
 
         rightPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         add(rightPanel, BorderLayout.EAST);
     }
 
-    private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color, boolean cardOrMach, int cardRemaining, int coinRemaining) {
+    private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color, boolean cardOrMach, int cardRemaining, int coinRemaining, int playerTurn, String cardOrMachInfo) {
         JPanel cardCase = new JPanel(new BorderLayout());
         //making the buttons
         JButton button = new JButton(icon);
@@ -225,6 +228,18 @@ public class Main extends JFrame {
             underMachLabel.setFont(font);
             underMachLabel.setForeground(color);
             cardCase.add(underMachLabel,BorderLayout.SOUTH);
+        }
+        //action listeners
+        if(!cardOrMach) {
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    slotMachOpt(panel ,coinRemaining, playerTurn, cardOrMachInfo);
+                }
+            });
+        }
+        else{
+
         }
         cardCase.add(button,BorderLayout.CENTER);
         panel.add(cardCase, gbc);
@@ -269,6 +284,416 @@ public class Main extends JFrame {
         panel.add(cardCase, gbc);
 
     }
+    //if a slot machine is clicked on
+    private void slotMachOpt(Container container, int coinRemaining, int turnPlayer, String colorOfMach){
+        JPanel slotMach = new JPanel(new GridLayout(1,2,50,50));
+        JButton coin2 = new JButton("Pick 2 coins from one machine");
+        JButton coin3 = new JButton("Pick 3 coins from 3 different machines");
+        coin2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (coinRemaining == 4){
+                    if(turnPlayer%2==1){
+                        coinDeduct(player1, colorOfMach);
+                    }
+                    else{
+                        coinDeduct(player2, colorOfMach);
+
+                    }
+                    slotMach.setVisible(false);
+                }
+                else {
+                    JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machine!");
+                }
+            }
+        });
+        coin3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JPanel coin3Options = new JPanel(new GridLayout(11,1,5,5));
+                JLabel choose = new JLabel("From which 3 machines shown below do you want to extract your coins?");
+                JButton opt1 = new JButton("Black White Blue");
+                JButton opt2 = new JButton("Black White Green");
+                JButton opt3 = new JButton("Black White Red");
+                JButton opt4 = new JButton("Black Blue Green");
+                JButton opt5 = new JButton("Black Blue Red");
+                JButton opt6 = new JButton("Black Green Red");
+                JButton opt7 = new JButton("White Blue Green");
+                JButton opt8 = new JButton("White Blue Red");
+                JButton opt9 = new JButton("White Green Red");
+                JButton opt10 = new JButton("Blue Green Red");
+                opt1.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(coins.getBlack()>0 && coins.getBlue()>0 && coins.getWhite()>0){
+                            if(turnPlayer%2==1){
+                                coinDeduct1(player1);
+                            }
+                            else{
+                                coinDeduct1(player2);
+                            }
+                            coin3Options.setVisible(false);
+                            slotMach.setVisible(false);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
+                        }
+                    }
+                });
+                opt2.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(coins.getBlack()>0 && coins.getGreen()>0 && coins.getWhite()>0){
+                            if(turnPlayer%2==1){
+                                coinDeduct2(player1);
+                            }
+                            else{
+                                coinDeduct2(player2);
+                            }
+                            coin3Options.setVisible(false);
+                            slotMach.setVisible(false);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
+                        }
+                    }
+                });
+                opt3.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(coins.getBlack()>0 && coins.getRed()>0 && coins.getWhite()>0){
+                            if(turnPlayer%2==1){
+                                coinDeduct3(player1);
+                            }
+                            else{
+                                coinDeduct3(player2);
+                            }
+                            coin3Options.setVisible(false);
+                            slotMach.setVisible(false);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
+                        }
+                    }
+                });
+                opt4.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(coins.getBlack()>0 && coins.getGreen()>0 && coins.getBlue()>0){
+                            if(turnPlayer%2==1){
+                                coinDeduct4(player1);
+                            }
+                            else{
+                                coinDeduct4(player2);
+                            }
+                            coin3Options.setVisible(false);
+                            slotMach.setVisible(false);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
+                        }
+                    }
+                });
+                opt5.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(coins.getBlack()>0 && coins.getBlue()>0 && coins.getRed()>0){
+                            if(turnPlayer%2==1){
+                                coinDeduct5(player1);
+                            }
+                            else{
+                                coinDeduct5(player2);
+                            }
+                            coin3Options.setVisible(false);
+                            slotMach.setVisible(false);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
+                        }
+                    }
+                });
+                opt6.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(coins.getBlack()>0 && coins.getGreen()>0 && coins.getRed()>0){
+                            if(turnPlayer%2==1){
+                                coinDeduct6(player1);
+                            }
+                            else{
+                                coinDeduct6(player2);
+                            }
+                            coin3Options.setVisible(false);
+                            slotMach.setVisible(false);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
+                        }
+                    }
+                });
+                opt7.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(coins.getBlue()>0 && coins.getGreen()>0 && coins.getWhite()>0){
+                            if(turnPlayer%2==1){
+                                coinDeduct7(player1);
+                            }
+                            else{
+                                coinDeduct7(player2);
+                            }
+                            coin3Options.setVisible(false);
+                            slotMach.setVisible(false);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
+                        }
+                    }
+                });
+                opt8.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(coins.getBlue()>0 && coins.getRed()>0 && coins.getWhite()>0){
+                            if(turnPlayer%2==1){
+                                coinDeduct8(player1);
+                            }
+                            else{
+                                coinDeduct8(player2);
+                            }
+                            coin3Options.setVisible(false);
+                            slotMach.setVisible(false);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
+                        }
+                    }
+                });
+                opt9.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(coins.getRed()>0 && coins.getGreen()>0 && coins.getWhite()>0){
+                            if(turnPlayer%2==1){
+                                coinDeduct9(player1);
+                            }
+                            else{
+                                coinDeduct9(player2);
+                            }
+                            coin3Options.setVisible(false);
+                            slotMach.setVisible(false);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
+                        }
+                    }
+                });
+                opt10.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(coins.getBlue()>0 && coins.getGreen()>0 && coins.getRed()>0){
+                            if(turnPlayer%2==1){
+                                coinDeduct10(player1);
+                            }
+                            else{
+                                coinDeduct10(player2);
+                            }
+                            coin3Options.setVisible(false);
+                            slotMach.setVisible(false);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
+                        }
+                    }
+                });
+                coin3Options.add(choose);
+                coin3Options.add(opt1);
+                coin3Options.add(opt2);
+                coin3Options.add(opt3);
+                coin3Options.add(opt4);
+                coin3Options.add(opt5);
+                coin3Options.add(opt6);
+                coin3Options.add(opt7);
+                coin3Options.add(opt8);
+                coin3Options.add(opt9);
+                coin3Options.add(opt10);
+            }
+        });
+        slotMach.add(coin2);
+        slotMach.add(coin3);
+        container.add(slotMach);
+    }
+
+    private void coinDeduct1(player player1) {
+        player1.blueRegCoin++;
+        player1.blackRegCoin++;
+        player1.whiteRegCoin++;
+        int coin = coins.getBlue();
+        coin--;
+        coins.setBlue(coin);
+        coin = coins.getBlack();
+        coin--;
+        coins.setBlack(coin);
+        coin = coins.getWhite();
+        coin--;
+        coins.setWhite(coin);
+    }
+    private void coinDeduct2(player player1) {
+        player1.greenRegCoin++;
+        player1.blackRegCoin++;
+        player1.whiteRegCoin++;
+        int coin = coins.getGreen();
+        coin--;
+        coins.setGreen(coin);
+        coin = coins.getBlack();
+        coin--;
+        coins.setBlack(coin);
+        coin = coins.getWhite();
+        coin--;
+        coins.setWhite(coin);
+    }
+    private void coinDeduct3(player player1) {
+        player1.redRegCoin++;
+        player1.blackRegCoin++;
+        player1.whiteRegCoin++;
+        int coin = coins.getRed();
+        coin--;
+        coins.setRed(coin);
+        coin = coins.getBlack();
+        coin--;
+        coins.setBlack(coin);
+        coin = coins.getWhite();
+        coin--;
+        coins.setWhite(coin);
+    }
+    private void coinDeduct4(player player1) {
+        player1.blueRegCoin++;
+        player1.blackRegCoin++;
+        player1.greenRegCoin++;
+        int coin = coins.getBlue();
+        coin--;
+        coins.setBlue(coin);
+        coin = coins.getBlack();
+        coin--;
+        coins.setBlack(coin);
+        coin = coins.getGreen();
+        coin--;
+        coins.setGreen(coin);
+    }
+    private void coinDeduct5(player player1) {
+        player1.blueRegCoin++;
+        player1.blackRegCoin++;
+        player1.redRegCoin++;
+        int coin = coins.getBlue();
+        coin--;
+        coins.setBlue(coin);
+        coin = coins.getBlack();
+        coin--;
+        coins.setBlack(coin);
+        coin = coins.getRed();
+        coin--;
+        coins.setRed(coin);
+    }
+    private void coinDeduct6(player player1) {
+        player1.greenRegCoin++;
+        player1.blackRegCoin++;
+        player1.redRegCoin++;
+        int coin = coins.getGreen();
+        coin--;
+        coins.setGreen(coin);
+        coin = coins.getBlack();
+        coin--;
+        coins.setBlack(coin);
+        coin = coins.getRed();
+        coin--;
+        coins.setRed(coin);
+    }
+    private void coinDeduct7(player player1) {
+        player1.blueRegCoin++;
+        player1.greenRegCoin++;
+        player1.whiteRegCoin++;
+        int coin = coins.getBlue();
+        coin--;
+        coins.setBlue(coin);
+        coin = coins.getGreen();
+        coin--;
+        coins.setGreen(coin);
+        coin = coins.getWhite();
+        coin--;
+        coins.setWhite(coin);
+    }
+    private void coinDeduct8(player player1) {
+        player1.blueRegCoin++;
+        player1.redRegCoin++;
+        player1.whiteRegCoin++;
+        int coin = coins.getBlue();
+        coin--;
+        coins.setBlue(coin);
+        coin = coins.getRed();
+        coin--;
+        coins.setRed(coin);
+        coin = coins.getWhite();
+        coin--;
+        coins.setWhite(coin);
+    }
+    private void coinDeduct9(player player1) {
+        player1.greenRegCoin++;
+        player1.redRegCoin++;
+        player1.whiteRegCoin++;
+        int coin = coins.getGreen();
+        coin--;
+        coins.setGreen(coin);
+        coin = coins.getRed();
+        coin--;
+        coins.setRed(coin);
+        coin = coins.getWhite();
+        coin--;
+        coins.setWhite(coin);
+    }
+    private void coinDeduct10(player player1) {
+        player1.blueRegCoin++;
+        player1.greenRegCoin++;
+        player1.redRegCoin++;
+        int coin = coins.getBlue();
+        coin--;
+        coins.setBlue(coin);
+        coin = coins.getGreen();
+        coin--;
+        coins.setGreen(coin);
+        coin = coins.getRed();
+        coin--;
+        coins.setRed(coin);
+    }
+
+    private void coinDeduct(player player1, String colorOfMach) {
+        if(colorOfMach.equals("red")){
+            player1.redRegCoin += 2;
+            int coin = coins.getRed();
+            coin-=2;
+            coins.setRed(coin);
+        }
+        else if(colorOfMach.equals("black")){
+            player1.blackRegCoin += 2;
+            int coin = coins.getBlack();
+            coin-=2;
+            coins.setBlack(coin);
+        }
+        else if(colorOfMach.equals("white")){
+            player1.whiteRegCoin += 2;
+            int coin = coins.getWhite();
+            coin-=2;
+            coins.setWhite(coin);
+        }
+        else if(colorOfMach.equals("blue")){
+            player1.blueRegCoin += 2;
+            int coin = coins.getBlue();
+            coin-=2;
+            coins.setBlue(coin);
+        }
+        else {
+            player1.greenRegCoin += 2;
+            int coin = coins.getGreen();
+            coin-=2;
+            coins.setGreen(coin);
+        }
+    }
+    //یارو کم کردن تعداد سکه ها متودش رو بنویسم
 
 
     public static void main(String[] args) {
