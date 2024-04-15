@@ -26,7 +26,7 @@ public class Main extends JFrame {
         this.setVisible(true);
     }
 
-    private void initLeftPanel() {
+    public void initLeftPanel() {
         JPanel leftPanel = new JPanel(new GridLayout(12, 0, 0, 10));
         JLabel playerOne = new JLabel("«PLAYER ONE»");
         JLabel coins = new JLabel("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
@@ -92,7 +92,7 @@ public class Main extends JFrame {
         numOfCards.setBackground(color2);
     }
 
-    private void initRightPanel() {
+    public void initRightPanel() {
         JPanel rightPanel = new JPanel();
         rightPanel.setBackground(Color.GRAY);
         rightPanel.setLayout(new GridBagLayout());
@@ -231,10 +231,16 @@ public class Main extends JFrame {
         }
         //action listeners
         if(!cardOrMach) {
-            button.addActionListener(e -> slotMachOpt(coinRemaining, cardOrMachInfo));
+            button.addActionListener(new ActionListener() {
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    slotMachOpt(coinRemaining, cardOrMachInfo);
+                }
+            });
         }
         else{
-              button.addActionListener(e -> cardOpt());
+              button.addActionListener(e -> cardOpt(cardOrMachInfo));
         }
         cardCase.add(button,BorderLayout.CENTER);
         panel.add(cardCase, gbc);
@@ -244,7 +250,7 @@ public class Main extends JFrame {
 
 
     //add component for prize claw cards
-    private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color, int clawRemaining) {
+    public void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color, int clawRemaining) {
         JPanel cardCase = new JPanel(new BorderLayout());
         //making the buttons
         JButton button = new JButton(icon);
@@ -286,8 +292,10 @@ public class Main extends JFrame {
 
 
     //if a slot machine is clicked on
-    private void slotMachOpt( int coinRemaining, String colorOfMach){
+    public void slotMachOpt( int coinRemaining, String colorOfMach){
         JPanel slotMach = new JPanel(new GridLayout(1,2,50,50));
+
+        slotMach.setVisible(true);
         JButton coin2 = new JButton("Pick 2 coins from one machine");
         JButton coin3 = new JButton("Pick 3 coins from 3 different machines");
         coin2.addActionListener(e -> {
@@ -493,10 +501,10 @@ public class Main extends JFrame {
         });
         slotMach.add(coin2);
         slotMach.add(coin3);
-        add(slotMach);
+        add(slotMach,BorderLayout.CENTER);
     }
 
-    private void coinDeduct1(player player1) {
+    public void coinDeduct1(player player1) {
         player1.blueRegCoin++;
         player1.blackRegCoin++;
         player1.whiteRegCoin++;
