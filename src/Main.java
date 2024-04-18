@@ -15,7 +15,8 @@ public class Main extends JFrame {
     prizeClawCards prizeClaw = new prizeClawCards();
     player player1 = new player();
     player player2 = new player();
-    //JFrame frame ;
+    JLabel coin1;
+
     public Main() {
         setSize(1700, 955);
         setLocationRelativeTo(null);
@@ -30,7 +31,7 @@ public class Main extends JFrame {
     public void initLeftPanel() {
         JPanel leftPanel = new JPanel(new GridLayout(12, 0, 0, 10));
         JLabel playerOne = new JLabel("«PLAYER ONE»");
-        JLabel coins = new JLabel("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
+        coin1 = new JLabel("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
         JLabel specialCoins = new JLabel("Special coins: "+"Green="+player1.greenSpecCoin+", White="+player1.whiteSpecCoin+", Black="+player1.blackSpecCoin+", red="+player1.redSpecCoin+", blue="+player1.blueSpecCoin+", Gold="+player1.goldCoin+" ");
         JLabel reservation = new JLabel("Reserves:(Rank SpecialCoin)" +player1.reserveRank[0]+" "+ player1.reserveSpecial[0]+","+player1.reserveRank[1]+" "+ player1.reserveSpecial[1]+","+player1.reserveRank[2]+" "+ player1.reserveSpecial[2]+" ");
         JLabel points = new JLabel("Points:"+player1.getPoints());
@@ -42,10 +43,10 @@ public class Main extends JFrame {
         JLabel points2 = new JLabel("Points:"+player2.getPoints());
         JLabel numCard2 = new JLabel("Number of cards="+player2.getNumOfCards());
         Font font = new Font(Font.DIALOG, Font.PLAIN, 15);
-        labels(playerOne, coins, specialCoins, reservation, points, numCard, font, Color.red, Color.pink);
+        labels(playerOne, coin1, specialCoins, reservation, points, numCard, font, Color.red, Color.pink);
         labels(playerTwo, coins2, specialCoins2, reservation2, points2, numCard2, font, Color.BLACK, Color.GRAY);
         leftPanel.add(playerOne);
-        leftPanel.add(coins);
+        leftPanel.add(coin1);
         leftPanel.add(specialCoins);
         leftPanel.add(reservation);
         leftPanel.add(points);
@@ -530,6 +531,7 @@ public class Main extends JFrame {
         coin = coins.getWhite();
         coin--;
         coins.setWhite(coin);
+        coin1.setText("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
     }
     private void coinDeduct2(player player1) {
         player1.greenRegCoin++;
@@ -694,15 +696,16 @@ public class Main extends JFrame {
     private void cardOpt(String cardInfo){
         JFrame frame3 = new JFrame();
         frame3.setVisible(true);
-        frame3.setSize(600,600);
-        JPanel cardPanel = new JPanel(new GridLayout(3,1,10,50));
-        JLabel choose = new JLabel("Do you want to reserve this card or purchase it?");
+        frame3.setSize(500,500);
+        JPanel cardPanel = new JPanel(new GridLayout(3,1,10,10));
+        JLabel choose = new JLabel(" Do you want to reserve this card or purchase it?");
         JButton reserve = new JButton("Reserve");
         JButton buy = new JButton("Purchase");
         reserve.addActionListener(e -> {
             if (player.turnPlayer%2==1){
                 cardIdRes(player1, cardInfo);
                 frame3.setVisible(false);
+                System.out.println(player1.goldCoin);
             }
             else{
                 cardIdRes(player2, cardInfo);
@@ -1906,7 +1909,6 @@ public class Main extends JFrame {
             coin--;
             coins.setGold(coin);
         }
-        setVisible(false);
     }
 
     //یارو کم کردن تعداد سکه ها متودش رو بنویسم
