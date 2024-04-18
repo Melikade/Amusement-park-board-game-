@@ -136,10 +136,10 @@ public class Main extends JFrame {
         JLabel tent3special = new JLabel("GREEN");
         JLabel tent4special = new JLabel("BLACK");
 
-        addComponent(rightPanel, tent, gbc, 0, 1, true, false, tent1special, tent1rank, tent1price, Color.BLUE, true, cards.getTent1(), 0  , " ");
-        addComponent(rightPanel, tent, gbc, 1, 1,true, false, tent2special, tent2rank, tent2price, Color.BLUE, true, cards.getTent2(), 0 , " ");
-        addComponent(rightPanel, tent, gbc, 2, 1,true, false, tent3special, tent3rank , tent3price, Color.BLUE,true, cards.getTent3(), 0 , " ");
-        addComponent(rightPanel, tent, gbc, 3, 1,true, false, tent4special, tent4rank, tent4price, Color.BLUE, true, cards.getTent4(), 0 , " ");
+        addComponent(rightPanel, tent, gbc, 0, 1, true, false, tent1special, tent1rank, tent1price, Color.BLUE, true, cards.getTent1(), 0  , "tent1");
+        addComponent(rightPanel, tent, gbc, 1, 1,true, false, tent2special, tent2rank, tent2price, Color.BLUE, true, cards.getTent2(), 0 , "tent2");
+        addComponent(rightPanel, tent, gbc, 2, 1,true, false, tent3special, tent3rank , tent3price, Color.BLUE,true, cards.getTent3(), 0 , "tent3");
+        addComponent(rightPanel, tent, gbc, 3, 1,true, false, tent4special, tent4rank, tent4price, Color.BLUE, true, cards.getTent4(), 0 , "tent4");
 
         JLabel ferris1rank = new JLabel("2");
         JLabel ferris2rank = new JLabel("3");
@@ -154,10 +154,10 @@ public class Main extends JFrame {
         JLabel ferris3special = new JLabel("GREEN");
         JLabel ferris4special = new JLabel("WHITE");
 
-        addComponent(rightPanel, ferris, gbc, 0, 2,true, false, ferris1special, ferris1rank, ferris1price, Color.RED, true, cards.getFerris1(), 0 , " ");
-        addComponent(rightPanel, ferris, gbc, 1, 2, true, false, ferris2special, ferris2rank, ferris2price, Color.RED, true, cards.getFerris2(), 0 , " ");
-        addComponent(rightPanel, ferris, gbc, 2, 2,true, false, ferris3special, ferris3rank, ferris3price, Color.RED, true, cards.getFerris3(), 0 , " ");
-        addComponent(rightPanel, ferris, gbc, 3, 2,true, false, ferris4special, ferris4rank, ferris4price, Color.RED, true, cards.getFerris4(), 0 , " ");
+        addComponent(rightPanel, ferris, gbc, 0, 2,true, false, ferris1special, ferris1rank, ferris1price, Color.RED, true, cards.getFerris1(), 0 , "ferris1");
+        addComponent(rightPanel, ferris, gbc, 1, 2, true, false, ferris2special, ferris2rank, ferris2price, Color.RED, true, cards.getFerris2(), 0 , "ferris2");
+        addComponent(rightPanel, ferris, gbc, 2, 2,true, false, ferris3special, ferris3rank, ferris3price, Color.RED, true, cards.getFerris3(), 0 , "ferris3");
+        addComponent(rightPanel, ferris, gbc, 3, 2,true, false, ferris4special, ferris4rank, ferris4price, Color.RED, true, cards.getFerris4(), 0 , "ferris4");
 
         JLabel coaster1rank = new JLabel("3");
         JLabel coaster2rank = new JLabel("4");
@@ -172,10 +172,10 @@ public class Main extends JFrame {
         JLabel coaster3special = new JLabel("RED");
         JLabel coaster4special = new JLabel("BLACK");
 
-        addComponent(rightPanel, coaster, gbc, 0, 3,true, false, coaster1special, coaster1rank, coaster1price, Color.DARK_GRAY, true, cards.getCoaster1(), 0, " ");
-        addComponent(rightPanel, coaster, gbc, 1, 3,true, false, coaster2special, coaster2rank, coaster2price, Color.DARK_GRAY, true, cards.getCoaster2(), 0, " ");
-        addComponent(rightPanel, coaster, gbc, 2, 3,true, false, coaster3special, coaster3rank, coaster3price, Color.DARK_GRAY, true, cards.getCoaster3(), 0, " ");
-        addComponent(rightPanel, coaster, gbc, 3, 3,true, false, coaster4special, coaster4rank, coaster4price, Color.DARK_GRAY, true, cards.getCoaster4(), 0," ");
+        addComponent(rightPanel, coaster, gbc, 0, 3,true, false, coaster1special, coaster1rank, coaster1price, Color.DARK_GRAY, true, cards.getCoaster1(), 0, "coaster1");
+        addComponent(rightPanel, coaster, gbc, 1, 3,true, false, coaster2special, coaster2rank, coaster2price, Color.DARK_GRAY, true, cards.getCoaster2(), 0, "coaster2");
+        addComponent(rightPanel, coaster, gbc, 2, 3,true, false, coaster3special, coaster3rank, coaster3price, Color.DARK_GRAY, true, cards.getCoaster3(), 0, "coaster3");
+        addComponent(rightPanel, coaster, gbc, 3, 3,true, false, coaster4special, coaster4rank, coaster4price, Color.DARK_GRAY, true, cards.getCoaster4(), 0,"coaster4");
 
         addComponent(rightPanel, black, gbc, 0, 4,false, false, special , special, special, Color.BLACK, false, 0, coins.getBlack(),"black");
         addComponent(rightPanel, white, gbc, 1, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getWhite(), "white");
@@ -692,37 +692,42 @@ public class Main extends JFrame {
     }
     // clicked on a card
     private void cardOpt(String cardInfo){
-        JPanel cardPanel = new JPanel(new GridLayout(3,1,50,50));
+        JFrame frame3 = new JFrame();
+        frame3.setVisible(true);
+        frame3.setSize(600,600);
+        JPanel cardPanel = new JPanel(new GridLayout(3,1,10,50));
         JLabel choose = new JLabel("Do you want to reserve this card or purchase it?");
         JButton reserve = new JButton("Reserve");
         JButton buy = new JButton("Purchase");
         reserve.addActionListener(e -> {
             if (player.turnPlayer%2==1){
                 cardIdRes(player1, cardInfo);
+                frame3.setVisible(false);
             }
             else{
                 cardIdRes(player2, cardInfo);
+                frame3.setVisible(false);
             }
         });
         buy.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(player.turnPlayer%2==1){
-
+                    cardIdBuy(frame3,player1,cardInfo);
                 }
                 else{
-
+                    cardIdBuy(frame3,player2,cardInfo);
                 }
             }
         });
-
         cardPanel.add(choose);
         cardPanel.add(reserve);
         cardPanel.add(buy);
+        frame3.add(cardPanel);
     }
 
     //buying cards functions
-    private void cardIdBuy(player player1, String cardInfo) {
+    private void cardIdBuy(JFrame frame,player player1, String cardInfo) {
         if(cardInfo.equals("tent1")){
             if(player1.redRegCoin>=4){
                 int point = player1.getPoints();
@@ -740,7 +745,7 @@ public class Main extends JFrame {
                 int card = cards.getTent1();
                 card--;
                 cards.setTent1(card);
-                setVisible(false);
+                frame.setVisible(false);
             }
             else if (player1.redSpecCoin+player1.redRegCoin>=4){
                 int point = player1.getPoints();
@@ -758,7 +763,7 @@ public class Main extends JFrame {
                 int card = cards.getTent1();
                 card--;
                 cards.setTent1(card);
-                setVisible(false);
+                frame.setVisible(false);
             }
             else if(player1.redRegCoin+player1.goldCoin>=4){
                 int point = player1.getPoints();
@@ -780,7 +785,7 @@ public class Main extends JFrame {
                 int card = cards.getTent1();
                 card--;
                 cards.setTent1(card);
-                setVisible(false);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -817,7 +822,7 @@ public class Main extends JFrame {
                 int card = cards.getTent3();
                 card--;
                 cards.setTent3(card);
-                setVisible(false);
+                frame.setVisible(false);
             }
             else if(player1.blackRegCoin+player1.goldCoin>=5 && player1.greenRegCoin+player1.goldCoin>=1){
                 int point = player1.getPoints();
@@ -857,7 +862,7 @@ public class Main extends JFrame {
                 int card = cards.getTent3();
                 card--;
                 cards.setTent3(card);
-                setVisible(false);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -894,7 +899,7 @@ public class Main extends JFrame {
                 int card = cards.getTent2();
                 card--;
                 cards.setTent2(card);
-                setVisible(false);
+                frame.setVisible(false);
             }
             else if(player1.blueRegCoin+player1.goldCoin>=3 && player1.whiteRegCoin+player1.goldCoin>=2){
                 int point = player1.getPoints();
@@ -934,7 +939,7 @@ public class Main extends JFrame {
                 int card = cards.getTent2();
                 card--;
                 cards.setTent2(card);
-                setVisible(false);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -969,6 +974,7 @@ public class Main extends JFrame {
                 int card = cards.getTent4();
                 card--;
                 cards.setTent4(card);
+                frame.setVisible(false);
             }
             else if(player1.greenRegCoin+player1.goldCoin>=2 && player1.redRegCoin+player1.goldCoin>=2){
                 int point = player1.getPoints();
@@ -1008,6 +1014,7 @@ public class Main extends JFrame {
                 int card = cards.getTent4();
                 card--;
                 cards.setTent4(card);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -1050,6 +1057,7 @@ public class Main extends JFrame {
                 int card = cards.getFerris1();
                 card--;
                 cards.setFerris1(card);
+                frame.setVisible(false);
             }
             else if(player1.redRegCoin+player1.goldCoin>=2 && player1.whiteRegCoin+player1.goldCoin>=2 && player1.blueRegCoin+player1.goldCoin>=2){
                 int point = player1.getPoints();
@@ -1101,6 +1109,7 @@ public class Main extends JFrame {
                 int card = cards.getFerris1();
                 card--;
                 cards.setFerris1(card);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -1135,6 +1144,7 @@ public class Main extends JFrame {
                 int card = cards.getFerris2();
                 card--;
                 cards.setFerris2(card);
+                frame.setVisible(false);
             }
             else if(player1.greenRegCoin+player1.goldCoin>=2 && player1.blackRegCoin+player1.goldCoin>=6){
                 int point = player1.getPoints();
@@ -1174,6 +1184,7 @@ public class Main extends JFrame {
                 int card = cards.getFerris2();
                 card--;
                 cards.setFerris2(card);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -1208,6 +1219,7 @@ public class Main extends JFrame {
                 int card = cards.getFerris3();
                 card--;
                 cards.setFerris3(card);
+                frame.setVisible(false);
             }
             else if(player1.whiteRegCoin+player1.goldCoin>=3 && player1.blueRegCoin+player1.goldCoin>=4){
                 int point = player1.getPoints();
@@ -1247,6 +1259,7 @@ public class Main extends JFrame {
                 int card = cards.getFerris3();
                 card--;
                 cards.setFerris3(card);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -1281,6 +1294,7 @@ public class Main extends JFrame {
                 int card = cards.getFerris4();
                 card--;
                 cards.setFerris4(card);
+                frame.setVisible(false);
             }
             else if(player1.whiteRegCoin+player1.goldCoin>=3 && player1.redRegCoin+player1.goldCoin>=3){
                 int point = player1.getPoints();
@@ -1320,6 +1334,7 @@ public class Main extends JFrame {
                 int card = cards.getFerris4();
                 card--;
                 cards.setFerris4(card);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -1354,6 +1369,7 @@ public class Main extends JFrame {
                 int card = cards.getCoaster1();
                 card--;
                 cards.setCoaster1(card);
+                frame.setVisible(false);
             }
             else if(player1.greenRegCoin+player1.goldCoin>=4 && player1.blueRegCoin+player1.goldCoin>=3){
                 int point = player1.getPoints();
@@ -1393,6 +1409,7 @@ public class Main extends JFrame {
                 int card = cards.getCoaster1();
                 card--;
                 cards.setCoaster1(card);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -1427,6 +1444,7 @@ public class Main extends JFrame {
                 int card = cards.getCoaster2();
                 card--;
                 cards.setCoaster2(card);
+                frame.setVisible(false);
             }
             else if(player1.whiteRegCoin+player1.goldCoin>=5 && player1.blueRegCoin+player1.goldCoin>=3){
                 int point = player1.getPoints();
@@ -1466,6 +1484,7 @@ public class Main extends JFrame {
                 int card = cards.getCoaster2();
                 card--;
                 cards.setCoaster2(card);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -1508,6 +1527,7 @@ public class Main extends JFrame {
                 int card = cards.getCoaster3();
                 card--;
                 cards.setCoaster3(card);
+                frame.setVisible(false);
             }
             else if(player1.redRegCoin+player1.goldCoin>=4 && player1.whiteRegCoin+player1.goldCoin>=2 && player1.blackRegCoin+player1.goldCoin>=3){
                 int point = player1.getPoints();
@@ -1559,6 +1579,7 @@ public class Main extends JFrame {
                 int card = cards.getCoaster3();
                 card--;
                 cards.setCoaster3(card);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
@@ -1601,6 +1622,7 @@ public class Main extends JFrame {
                 int card = cards.getCoaster4();
                 card--;
                 cards.setCoaster4(card);
+                frame.setVisible(false);
             }
             else if(player1.redRegCoin+player1.goldCoin>=3 && player1.greenRegCoin+player1.goldCoin>=4 && player1.blackRegCoin+player1.goldCoin>=3){
                 int point = player1.getPoints();
@@ -1652,6 +1674,7 @@ public class Main extends JFrame {
                 int card = cards.getCoaster4();
                 card--;
                 cards.setCoaster4(card);
+                frame.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
