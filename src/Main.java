@@ -364,7 +364,7 @@ public class Main extends JFrame {
 
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    slotMachOpt(coinRemaining, cardOrMachInfo);
+                    slotMachOpt(cardOrMachInfo);
                 }
             });
         }
@@ -441,7 +441,7 @@ public class Main extends JFrame {
 
 
     //if a slot machine is clicked on
-    public void slotMachOpt( int coinRemaining, String colorOfMach){
+    public void slotMachOpt( String colorOfMach){
         JFrame frame1 = new JFrame();
         frame1.setSize(700,700);
         frame1.setVisible(true);
@@ -449,14 +449,57 @@ public class Main extends JFrame {
         JButton coin2 = new JButton("Pick 2 coins from one machine");
         JButton coin3 = new JButton("Pick 3 coins from 3 different machines");
         coin2.addActionListener(e -> {
-            if (coinRemaining == 4){
+            if (colorOfMach.equals("blue") && coins.getBlue()==4){
                 if(player.turnPlayer%2==1){
                     coinDeduct(player1, colorOfMach, true);
 
                 }
                 else{
                     coinDeduct(player2, colorOfMach, false);
+                }
+                frame1.setVisible(false);
+                player.turnPlayer++;
+            }
+            else if (colorOfMach.equals("black") && coins.getBlack()==4){
+                if(player.turnPlayer%2==1){
+                    coinDeduct(player1, colorOfMach, true);
 
+                }
+                else{
+                    coinDeduct(player2, colorOfMach, false);
+                }
+                frame1.setVisible(false);
+                player.turnPlayer++;
+            }
+            else if (colorOfMach.equals("red") && coins.getRed()==4){
+                if(player.turnPlayer%2==1){
+                    coinDeduct(player1, colorOfMach, true);
+
+                }
+                else{
+                    coinDeduct(player2, colorOfMach, false);
+                }
+                frame1.setVisible(false);
+                player.turnPlayer++;
+            }
+            else if (colorOfMach.equals("white") && coins.getWhite()==4){
+                if(player.turnPlayer%2==1){
+                    coinDeduct(player1, colorOfMach, true);
+
+                }
+                else{
+                    coinDeduct(player2, colorOfMach, false);
+                }
+                frame1.setVisible(false);
+                player.turnPlayer++;
+            }
+            else if (colorOfMach.equals("green") && coins.getGreen()==4){
+                if(player.turnPlayer%2==1){
+                    coinDeduct(player1, colorOfMach, true);
+
+                }
+                else{
+                    coinDeduct(player2, colorOfMach, false);
                 }
                 frame1.setVisible(false);
                 player.turnPlayer++;
@@ -813,31 +856,59 @@ public class Main extends JFrame {
             else{
                 coin2.setText("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
             }
-            //underLabel.setText();
+            underMachLabel5.setText(" Remaining coins = " + coins.getRed());
         }
         else if(colorOfMach.equals("black")){
             player1.blackRegCoin += 2;
             int coin = coins.getBlack();
             coin-=2;
             coins.setBlack(coin);
+            if(a) {
+                coin1.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+            }
+            else{
+                coin2.setText("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
+            }
+            underMachLabel1.setText(" Remaining coins = " + coins.getBlack());
         }
         else if(colorOfMach.equals("white")){
             player1.whiteRegCoin += 2;
             int coin = coins.getWhite();
             coin-=2;
             coins.setWhite(coin);
+            if(a) {
+                coin1.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+            }
+            else{
+                coin2.setText("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
+            }
+            underMachLabel2.setText(" Remaining coins = " + coins.getWhite());
         }
         else if(colorOfMach.equals("blue")){
             player1.blueRegCoin += 2;
             int coin = coins.getBlue();
             coin-=2;
             coins.setBlue(coin);
+            if(a) {
+                coin1.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+            }
+            else{
+                coin2.setText("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
+            }
+            underMachLabel4.setText(" Remaining coins = " + coins.getBlue());
         }
         else {
             player1.greenRegCoin += 2;
             int coin = coins.getGreen();
             coin-=2;
             coins.setGreen(coin);
+            if(a) {
+                coin1.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+            }
+            else{
+                coin2.setText("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
+            }
+            underMachLabel3.setText(" Remaining coins = " + coins.getGreen());
         }
     }
     // clicked on a card
