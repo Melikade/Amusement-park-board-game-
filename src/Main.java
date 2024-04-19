@@ -16,6 +16,37 @@ public class Main extends JFrame {
     player player1 = new player();
     player player2 = new player();
     JLabel coin1;
+    JLabel specialCoins1;
+    JLabel reservation1;
+    JLabel points1;
+    JLabel numCard1;
+    JLabel coin2;
+    JLabel specialCoins2;
+    JLabel reservation2;
+    JLabel points2;
+    JLabel numCard2;
+    JLabel underMachLabel1;
+    JLabel underMachLabel2;
+    JLabel underMachLabel3;
+    JLabel underMachLabel4;
+    JLabel underMachLabel5;
+    JLabel underLabel1;
+    JLabel underLabel2;
+    JLabel underLabel3;
+    JLabel underLabel4;
+    JLabel underLabel5;
+    JLabel underLabel6;
+    JLabel underLabel7;
+    JLabel underLabel8;
+    JLabel underLabel9;
+    JLabel underLabel10;
+    JLabel underLabel11;
+    JLabel underLabel12;
+    JLabel underLabelClaw1;
+    JLabel underLabelClaw2;
+    JLabel underLabelClaw3;
+
+
 
     public Main() {
         setSize(1700, 955);
@@ -32,27 +63,27 @@ public class Main extends JFrame {
         JPanel leftPanel = new JPanel(new GridLayout(12, 0, 0, 10));
         JLabel playerOne = new JLabel("«PLAYER ONE»");
         coin1 = new JLabel("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
-        JLabel specialCoins = new JLabel("Special coins: "+"Green="+player1.greenSpecCoin+", White="+player1.whiteSpecCoin+", Black="+player1.blackSpecCoin+", red="+player1.redSpecCoin+", blue="+player1.blueSpecCoin+", Gold="+player1.goldCoin+" ");
-        JLabel reservation = new JLabel("Reserves:(Rank SpecialCoin)" +player1.reserveRank[0]+" "+ player1.reserveSpecial[0]+","+player1.reserveRank[1]+" "+ player1.reserveSpecial[1]+","+player1.reserveRank[2]+" "+ player1.reserveSpecial[2]+" ");
-        JLabel points = new JLabel("Points:"+player1.getPoints());
-        JLabel numCard = new JLabel("Number of cards="+player1.getNumOfCards());
+        specialCoins1 = new JLabel("Special coins: "+"Green="+player1.greenSpecCoin+", White="+player1.whiteSpecCoin+", Black="+player1.blackSpecCoin+", red="+player1.redSpecCoin+", blue="+player1.blueSpecCoin+", Gold="+player1.goldCoin+" ");
+        reservation1 = new JLabel("Reserves:(Rank SpecialCoin)" +player1.reserveRank[0]+" "+ player1.reserveSpecial[0]+","+player1.reserveRank[1]+" "+ player1.reserveSpecial[1]+","+player1.reserveRank[2]+" "+ player1.reserveSpecial[2]+" ");
+        points1 = new JLabel("Points:"+player1.getPoints());
+        numCard1 = new JLabel("Number of cards="+player1.getNumOfCards());
         JLabel playerTwo = new JLabel("«PLAYER TWO»");
-        JLabel coins2 = new JLabel("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
-        JLabel specialCoins2 = new JLabel("Special coins: "+"Green="+player2.greenSpecCoin+", White="+player2.whiteSpecCoin+", Black="+player2.blackSpecCoin+", red="+player2.redSpecCoin+", blue="+player2.blueSpecCoin+", Gold="+player2.goldCoin+" ");
-        JLabel reservation2 = new JLabel("Reserves:(Rank SpecialCoin)" +player2.reserveRank[0]+" "+ player2.reserveSpecial[0]+","+player2.reserveRank[1]+" "+ player2.reserveSpecial[1]+","+player2.reserveRank[2]+" "+ player2.reserveSpecial[2]+" ");
-        JLabel points2 = new JLabel("Points:"+player2.getPoints());
-        JLabel numCard2 = new JLabel("Number of cards="+player2.getNumOfCards());
+        coin2 = new JLabel("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
+        specialCoins2 = new JLabel("Special coins: "+"Green="+player2.greenSpecCoin+", White="+player2.whiteSpecCoin+", Black="+player2.blackSpecCoin+", red="+player2.redSpecCoin+", blue="+player2.blueSpecCoin+", Gold="+player2.goldCoin+" ");
+        reservation2 = new JLabel("Reserves:(Rank SpecialCoin)" +player2.reserveRank[0]+" "+ player2.reserveSpecial[0]+","+player2.reserveRank[1]+" "+ player2.reserveSpecial[1]+","+player2.reserveRank[2]+" "+ player2.reserveSpecial[2]+" ");
+        points2 = new JLabel("Points:"+player2.getPoints());
+        numCard2 = new JLabel("Number of cards="+player2.getNumOfCards());
         Font font = new Font(Font.DIALOG, Font.PLAIN, 15);
-        labels(playerOne, coin1, specialCoins, reservation, points, numCard, font, Color.red, Color.pink);
-        labels(playerTwo, coins2, specialCoins2, reservation2, points2, numCard2, font, Color.BLACK, Color.GRAY);
+        labels(playerOne, coin1, specialCoins1, reservation1, points1, numCard1, font, Color.red, Color.pink);
+        labels(playerTwo, coin2, specialCoins2, reservation2, points2, numCard2, font, Color.BLACK, Color.GRAY);
         leftPanel.add(playerOne);
         leftPanel.add(coin1);
-        leftPanel.add(specialCoins);
-        leftPanel.add(reservation);
-        leftPanel.add(points);
-        leftPanel.add(numCard);
+        leftPanel.add(specialCoins1);
+        leftPanel.add(reservation1);
+        leftPanel.add(points1);
+        leftPanel.add(numCard1);
         leftPanel.add(playerTwo);
-        leftPanel.add(coins2);
+        leftPanel.add(coin2);
         leftPanel.add(specialCoins2);
         leftPanel.add(reservation2);
         leftPanel.add(points2);
@@ -120,9 +151,9 @@ public class Main extends JFrame {
         JLabel claw3price = new JLabel("2 Green + 8 Red");
         JLabel special = new JLabel();
 
-        addComponent(rightPanel, claw, gbc, 0, 0, true, true, special, claw1rank, claw1price, Color.MAGENTA, prizeClaw.getClaw1());
-        addComponent(rightPanel, claw, gbc, 1, 0,true, true, special, claw2rank, claw2price, Color.MAGENTA, prizeClaw.getClaw2());
-        addComponent(rightPanel, claw, gbc, 2, 0,true, true, special, claw3rank, claw3price, Color.MAGENTA, prizeClaw.getClaw3());
+        addComponent(rightPanel, claw, gbc, 0, 0, true, true, special, claw1rank, claw1price, Color.MAGENTA, prizeClaw.getClaw1(), "claw1");
+        addComponent(rightPanel, claw, gbc, 1, 0,true, true, special, claw2rank, claw2price, Color.MAGENTA, prizeClaw.getClaw2(), "claw2");
+        addComponent(rightPanel, claw, gbc, 2, 0,true, true, special, claw3rank, claw3price, Color.MAGENTA, prizeClaw.getClaw3(), "claw3");
 
         JLabel tent1rank = new JLabel("0");
         JLabel tent2rank = new JLabel("1");
@@ -220,16 +251,112 @@ public class Main extends JFrame {
         button.add(specialCoin,BorderLayout.WEST);
         //adding labels under the cards
         if( cardOrMach ) {
-            JLabel underLabel = new JLabel(" Remaining cards = "+cardRemaining);
-            underLabel.setFont(font);
-            underLabel.setForeground(color);
-            cardCase.add(underLabel,BorderLayout.SOUTH);
+            if(cardOrMachInfo.equals("tent1")){
+                underLabel1 = new JLabel(" Remaining cards = "+cards.getTent1());
+                underLabel1.setFont(font);
+                underLabel1.setForeground(color);
+                cardCase.add(underLabel1,BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("tent2")){
+                underLabel2 = new JLabel(" Remaining cards = "+cards.getTent2());
+                underLabel2.setFont(font);
+                underLabel2.setForeground(color);
+                cardCase.add(underLabel2,BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("tent3")){
+                underLabel3 = new JLabel(" Remaining cards = "+cards.getTent3());
+                underLabel3.setFont(font);
+                underLabel3.setForeground(color);
+                cardCase.add(underLabel3,BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("tent4")){
+                underLabel4 = new JLabel(" Remaining cards = "+cards.getTent4());
+                underLabel4.setFont(font);
+                underLabel4.setForeground(color);
+                cardCase.add(underLabel4,BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("ferris1")){
+                underLabel5 = new JLabel(" Remaining cards = "+cards.getFerris1());
+                underLabel5.setFont(font);
+                underLabel5.setForeground(color);
+                cardCase.add(underLabel5,BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("ferris2")){
+                underLabel6 = new JLabel(" Remaining cards = "+cards.getFerris2());
+                underLabel6.setFont(font);
+                underLabel6.setForeground(color);
+                cardCase.add(underLabel6,BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("ferris3")){
+                underLabel7 = new JLabel(" Remaining cards = "+cards.getFerris3());
+                underLabel7.setFont(font);
+                underLabel7.setForeground(color);
+                cardCase.add(underLabel7,BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("ferris4")){
+                underLabel8 = new JLabel(" Remaining cards = "+cards.getFerris4());
+                underLabel8.setFont(font);
+                underLabel8.setForeground(color);
+                cardCase.add(underLabel8,BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("coaster1")){
+                underLabel9 = new JLabel(" Remaining cards = "+cards.getCoaster1());
+                underLabel9.setFont(font);
+                underLabel9.setForeground(color);
+                cardCase.add(underLabel9,BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("coaster2")){
+                underLabel10 = new JLabel(" Remaining cards = "+cards.getCoaster2());
+                underLabel10.setFont(font);
+                underLabel10.setForeground(color);
+                cardCase.add(underLabel10,BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("coaster3")){
+                underLabel11 = new JLabel(" Remaining cards = "+cards.getCoaster3());
+                underLabel11.setFont(font);
+                underLabel11.setForeground(color);
+                cardCase.add(underLabel11,BorderLayout.SOUTH);
+            }
+            else {
+                underLabel12 = new JLabel(" Remaining cards = "+cards.getCoaster4());
+                underLabel12.setFont(font);
+                underLabel12.setForeground(color);
+                cardCase.add(underLabel12,BorderLayout.SOUTH);
+            }
         }
+
         else {
-            JLabel underMachLabel = new JLabel(" Remaining coins = "+coinRemaining);
-            underMachLabel.setFont(font);
-            underMachLabel.setForeground(color);
-            cardCase.add(underMachLabel,BorderLayout.SOUTH);
+            if(cardOrMachInfo.equals("black")) {
+                underMachLabel1 = new JLabel(" Remaining coins = " + coins.getBlack());
+                underMachLabel1.setFont(font);
+                underMachLabel1.setForeground(color);
+                cardCase.add(underMachLabel1, BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("white")) {
+                underMachLabel2 = new JLabel(" Remaining coins = " + coins.getWhite());
+                underMachLabel2.setFont(font);
+                underMachLabel2.setForeground(color);
+                cardCase.add(underMachLabel2, BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("green")) {
+                underMachLabel3 = new JLabel(" Remaining coins = " + coins.getGreen());
+                underMachLabel3.setFont(font);
+                underMachLabel3.setForeground(color);
+                cardCase.add(underMachLabel3, BorderLayout.SOUTH);
+            }
+            else if(cardOrMachInfo.equals("blue")) {
+                underMachLabel4 = new JLabel(" Remaining coins = " + coins.getBlue());
+                underMachLabel4.setFont(font);
+                underMachLabel4.setForeground(color);
+                cardCase.add(underMachLabel4, BorderLayout.SOUTH);
+            }
+            else{
+                underMachLabel5 = new JLabel(" Remaining coins = " + coins.getRed());
+                underMachLabel5.setFont(font);
+                underMachLabel5.setForeground(color);
+                cardCase.add(underMachLabel5, BorderLayout.SOUTH);
+            }
+
         }
         //action listeners
         if(!cardOrMach) {
@@ -258,7 +385,7 @@ public class Main extends JFrame {
 
 
     //add component for prize claw cards
-    public void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color, int clawRemaining) {
+    public void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color, int clawRemaining, String clawInfo) {
         JPanel cardCase = new JPanel(new BorderLayout());
         //making the buttons
         JButton button = new JButton(icon);
@@ -289,10 +416,24 @@ public class Main extends JFrame {
         button.add(rank,BorderLayout.NORTH);
         button.add(specialCoin,BorderLayout.WEST);
         //adding labels under the cards
-        JLabel underLabel = new JLabel(" Remaining cards = "+clawRemaining);
-        underLabel.setFont(font);
-        underLabel.setForeground(color);
-        cardCase.add(underLabel,BorderLayout.SOUTH);
+        if(clawInfo.equals("claw1")){
+            underLabelClaw1 = new JLabel(" Remaining cards = "+prizeClaw.getClaw1());
+            underLabelClaw1.setFont(font);
+            underLabelClaw1.setForeground(color);
+            cardCase.add(underLabelClaw1,BorderLayout.SOUTH);
+        }
+        else if(clawInfo.equals("claw2")){
+            underLabelClaw2 = new JLabel(" Remaining cards = "+prizeClaw.getClaw2());
+            underLabelClaw2.setFont(font);
+            underLabelClaw2.setForeground(color);
+            cardCase.add(underLabelClaw2,BorderLayout.SOUTH);
+        }
+        else {
+            underLabelClaw3 = new JLabel(" Remaining cards = "+prizeClaw.getClaw3());
+            underLabelClaw3.setFont(font);
+            underLabelClaw3.setForeground(color);
+            cardCase.add(underLabelClaw3,BorderLayout.SOUTH);
+        }
         cardCase.add(button,BorderLayout.CENTER);
         panel.add(cardCase, gbc);
 
@@ -310,11 +451,11 @@ public class Main extends JFrame {
         coin2.addActionListener(e -> {
             if (coinRemaining == 4){
                 if(player.turnPlayer%2==1){
-                    coinDeduct(player1, colorOfMach);
+                    coinDeduct(player1, colorOfMach, true);
 
                 }
                 else{
-                    coinDeduct(player2, colorOfMach);
+                    coinDeduct(player2, colorOfMach, false);
 
                 }
                 frame1.setVisible(false);
@@ -660,12 +801,19 @@ public class Main extends JFrame {
         coins.setRed(coin);
     }
 
-    private void coinDeduct(player player1, String colorOfMach) {
+    private void coinDeduct(player player1, String colorOfMach, boolean a) {
         if(colorOfMach.equals("red")){
             player1.redRegCoin += 2;
             int coin = coins.getRed();
             coin-=2;
             coins.setRed(coin);
+            if(a) {
+                coin1.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+            }
+            else{
+                coin2.setText("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
+            }
+            //underLabel.setText();
         }
         else if(colorOfMach.equals("black")){
             player1.blackRegCoin += 2;
@@ -1912,7 +2060,8 @@ public class Main extends JFrame {
     }
 
     //یارو کم کردن تعداد سکه ها متودش رو بنویسم
-//شرط بردن بازیکن ها رسیدن به ۱۵ است یا کارت ها تموم بشه
+    // شرط بردن بازیکن ها رسیدن به ۱۵ است یا کارت ها تموم بشه
+    // انتهاب پرایز کلاوو کارد
 
     public static void main(String[] args) {
         new Main();
