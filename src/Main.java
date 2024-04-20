@@ -816,6 +816,7 @@ public class Main extends JFrame {
         coin = coins.getWhite();
         coin--;
         coins.setWhite(coin);
+        coinMax10();
     }
     private void coinDeduct2(player player1) {
         player1.greenRegCoin++;
@@ -830,6 +831,7 @@ public class Main extends JFrame {
         coin = coins.getWhite();
         coin--;
         coins.setWhite(coin);
+        coinMax10();
     }
     private void coinDeduct3(player player1) {
         player1.redRegCoin++;
@@ -844,6 +846,7 @@ public class Main extends JFrame {
         coin = coins.getWhite();
         coin--;
         coins.setWhite(coin);
+        coinMax10();
     }
     private void coinDeduct4(player player1) {
         player1.blueRegCoin++;
@@ -858,6 +861,7 @@ public class Main extends JFrame {
         coin = coins.getGreen();
         coin--;
         coins.setGreen(coin);
+        coinMax10();
     }
     private void coinDeduct5(player player1) {
         player1.blueRegCoin++;
@@ -872,6 +876,7 @@ public class Main extends JFrame {
         coin = coins.getRed();
         coin--;
         coins.setRed(coin);
+        coinMax10();
     }
     private void coinDeduct6(player player1) {
         player1.greenRegCoin++;
@@ -886,6 +891,7 @@ public class Main extends JFrame {
         coin = coins.getRed();
         coin--;
         coins.setRed(coin);
+        coinMax10();
     }
     private void coinDeduct7(player player1) {
         player1.blueRegCoin++;
@@ -900,6 +906,7 @@ public class Main extends JFrame {
         coin = coins.getWhite();
         coin--;
         coins.setWhite(coin);
+        coinMax10();
     }
     private void coinDeduct8(player player1) {
         player1.blueRegCoin++;
@@ -914,6 +921,7 @@ public class Main extends JFrame {
         coin = coins.getWhite();
         coin--;
         coins.setWhite(coin);
+        coinMax10();
     }
     private void coinDeduct9(player player1) {
         player1.greenRegCoin++;
@@ -928,6 +936,7 @@ public class Main extends JFrame {
         coin = coins.getWhite();
         coin--;
         coins.setWhite(coin);
+        coinMax10();
     }
     private void coinDeduct10(player player1) {
         player1.blueRegCoin++;
@@ -942,6 +951,7 @@ public class Main extends JFrame {
         coin = coins.getRed();
         coin--;
         coins.setRed(coin);
+        coinMax10();
     }
 
     private void coinDeduct(player player1, String colorOfMach, boolean a) {
@@ -1010,6 +1020,7 @@ public class Main extends JFrame {
             }
             underMachLabel3.setText(" Remaining coins = " + coins.getGreen());
         }
+        coinMax10();
     }
 
     //clicked on a prize claw card
@@ -2437,7 +2448,195 @@ public class Main extends JFrame {
         }
     }
 
-    //یارو کم کردن تعداد سکه ها متودش رو بنویسم
+    private void coinMax10(){
+        if(player1.blueRegCoin+player1.blackRegCoin+player1.redRegCoin+player1.whiteRegCoin+player1.greenRegCoin>10){
+            JFrame frame10 = new JFrame();
+            JPanel coin10Opt = new JPanel(new GridLayout(15,1,10,10));
+            frame10.setSize(600,600);
+            frame10.setVisible(true);
+            JLabel question = new JLabel("Player one,please select the coins which you want to return to the slot machine in order to have less than 11 coins");
+            JButton button0 = new JButton(player1.coinMax10[0]);
+            JButton button1 = new JButton(player1.coinMax10[1]);
+            JButton button2 = new JButton(player1.coinMax10[2]);
+            JButton button3 = new JButton(player1.coinMax10[3]);
+            JButton button4 = new JButton(player1.coinMax10[3]);
+            JButton button5 = new JButton(player1.coinMax10[3]);
+            JButton button6 = new JButton(player1.coinMax10[3]);
+            JButton button7 = new JButton(player1.coinMax10[3]);
+            JButton button8 = new JButton(player1.coinMax10[3]);
+            JButton button9 = new JButton(player1.coinMax10[3]);
+            JButton button10 = new JButton(player1.coinMax10[3]);
+            JButton button11 = new JButton(player1.coinMax10[3]);
+            JButton button12 = new JButton(player1.coinMax10[3]);
+            JButton end = new JButton("Done!");
+            button0.addActionListener(e -> reduceCoin(0));
+            button1.addActionListener(e -> reduceCoin(1));
+            button2.addActionListener(e -> reduceCoin(2));
+            button3.addActionListener(e -> reduceCoin(3));
+            button4.addActionListener(e -> reduceCoin(4));
+            button5.addActionListener(e -> reduceCoin(5));
+            button6.addActionListener(e -> reduceCoin(6));
+            button7.addActionListener(e -> reduceCoin(7));
+            button8.addActionListener(e -> reduceCoin(8));
+            button9.addActionListener(e -> reduceCoin(9));
+            button10.addActionListener(e -> reduceCoin(10));
+            button11.addActionListener(e -> reduceCoin(11));
+            button12.addActionListener(e -> reduceCoin(12));
+            end.addActionListener(e -> frame10.setVisible(false));
+            coin10Opt.add(question);
+            coin10Opt.add(button0);
+            coin10Opt.add(button1);
+            coin10Opt.add(button2);
+            coin10Opt.add(button3);
+            coin10Opt.add(button4);
+            coin10Opt.add(button5);
+            coin10Opt.add(button6);
+            coin10Opt.add(button7);
+            coin10Opt.add(button8);
+            coin10Opt.add(button9);
+            coin10Opt.add(button10);
+            coin10Opt.add(button11);
+            coin10Opt.add(button12);
+            frame10.add(coin10Opt);
+        }
+
+        if(player2.blueRegCoin+player2.blackRegCoin+player2.redRegCoin+player2.whiteRegCoin+player2.greenRegCoin>10){
+            JFrame frame10 = new JFrame();
+            JPanel coin10Opt = new JPanel(new GridLayout(15,1,10,10));
+            frame10.setSize(600,600);
+            frame10.setVisible(true);
+            JLabel question = new JLabel("Player two,please select the coins which you want to return to the slot machine in order to have less than 11 coins");
+            JButton button0 = new JButton(player1.coinMax10[0]);
+            JButton button1 = new JButton(player1.coinMax10[1]);
+            JButton button2 = new JButton(player1.coinMax10[2]);
+            JButton button3 = new JButton(player1.coinMax10[3]);
+            JButton button4 = new JButton(player1.coinMax10[3]);
+            JButton button5 = new JButton(player1.coinMax10[3]);
+            JButton button6 = new JButton(player1.coinMax10[3]);
+            JButton button7 = new JButton(player1.coinMax10[3]);
+            JButton button8 = new JButton(player1.coinMax10[3]);
+            JButton button9 = new JButton(player1.coinMax10[3]);
+            JButton button10 = new JButton(player1.coinMax10[3]);
+            JButton button11 = new JButton(player1.coinMax10[3]);
+            JButton button12 = new JButton(player1.coinMax10[3]);
+            JButton end = new JButton("Done!");
+            button0.addActionListener(e -> reduceCoin2(0));
+            button1.addActionListener(e -> reduceCoin2(1));
+            button2.addActionListener(e -> reduceCoin2(2));
+            button3.addActionListener(e -> reduceCoin2(3));
+            button4.addActionListener(e -> reduceCoin2(4));
+            button5.addActionListener(e -> reduceCoin2(5));
+            button6.addActionListener(e -> reduceCoin2(6));
+            button7.addActionListener(e -> reduceCoin2(7));
+            button8.addActionListener(e -> reduceCoin2(8));
+            button9.addActionListener(e -> reduceCoin2(9));
+            button10.addActionListener(e -> reduceCoin2(10));
+            button11.addActionListener(e -> reduceCoin2(11));
+            button12.addActionListener(e -> reduceCoin2(12));
+            end.addActionListener(e -> frame10.setVisible(false));
+            coin10Opt.add(question);
+            coin10Opt.add(button0);
+            coin10Opt.add(button1);
+            coin10Opt.add(button2);
+            coin10Opt.add(button3);
+            coin10Opt.add(button4);
+            coin10Opt.add(button5);
+            coin10Opt.add(button6);
+            coin10Opt.add(button7);
+            coin10Opt.add(button8);
+            coin10Opt.add(button9);
+            coin10Opt.add(button10);
+            coin10Opt.add(button11);
+            coin10Opt.add(button12);
+            frame10.add(coin10Opt);
+        }
+    }
+    private void reduceCoin2 (int i){
+        player2.coinArray();
+        if(player2.coinMax10[i].equals("Black")){
+            player2.blackRegCoin--;
+            int coin = coins.getBlack();
+            coin++;
+            coins.setBlack(coin);
+            underMachLabel1.setText(" Remaining coins = "+coins.getBlack());
+            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+        }
+        else if(player2.coinMax10[i].equals("White")){
+            player2.whiteRegCoin--;
+            int coin = coins.getWhite();
+            coin++;
+            coins.setWhite(coin);
+            underMachLabel2.setText(" Remaining coins = "+coins.getWhite());
+            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+        }
+        else if(player2.coinMax10[i].equals("Green")){
+            player2.greenRegCoin--;
+            int coin = coins.getGreen();
+            coin++;
+            coins.setGreen(coin);
+            underMachLabel3.setText(" Remaining coins = "+coins.getGreen());
+            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+        }
+        else if(player2.coinMax10[i].equals("Blue")){
+            player2.blueRegCoin--;
+            int coin = coins.getBlue();
+            coin++;
+            coins.setBlue(coin);
+            underMachLabel4.setText(" Remaining coins = "+coins.getBlue());
+            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+        }
+        else{
+            player2.redRegCoin--;
+            int coin = coins.getRed();
+            coin++;
+            coins.setRed(coin);
+            underMachLabel5.setText(" Remaining coins = "+coins.getRed());
+            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+        }
+    }
+    private void reduceCoin (int i){
+        player2.coinArray();
+        if(player2.coinMax10[i].equals("Black")){
+            player2.blackRegCoin--;
+            int coin = coins.getBlack();
+            coin++;
+            coins.setBlack(coin);
+            underMachLabel1.setText(" Remaining coins = "+coins.getBlack());
+            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+        }
+        else if(player2.coinMax10[i].equals("White")){
+            player2.whiteRegCoin--;
+            int coin = coins.getWhite();
+            coin++;
+            coins.setWhite(coin);
+            underMachLabel2.setText(" Remaining coins = "+coins.getWhite());
+            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+        }
+        else if(player2.coinMax10[i].equals("Green")){
+            player2.greenRegCoin--;
+            int coin = coins.getGreen();
+            coin++;
+            coins.setGreen(coin);
+            underMachLabel3.setText(" Remaining coins = "+coins.getGreen());
+            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+        }
+        else if(player2.coinMax10[i].equals("Blue")){
+            player2.blueRegCoin--;
+            int coin = coins.getBlue();
+            coin++;
+            coins.setBlue(coin);
+            underMachLabel4.setText(" Remaining coins = "+coins.getBlue());
+            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+        }
+        else{
+            player2.redRegCoin--;
+            int coin = coins.getRed();
+            coin++;
+            coins.setRed(coin);
+            underMachLabel5.setText(" Remaining coins = "+coins.getRed());
+            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+        }
+    }
 
     public static void main(String[] args) {
         new Main();

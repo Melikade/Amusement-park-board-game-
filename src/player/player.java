@@ -3,7 +3,7 @@ package player;
 public class player {
     public static int turnPlayer=0;
     public int greenRegCoin=0;
-    public int blueRegCoin=3;
+    public int blueRegCoin=0;
     public int whiteRegCoin=0;
     public int blackRegCoin=0;
     public int redRegCoin=0;
@@ -19,8 +19,26 @@ public class player {
     public int[] reserveRank = new int[3];
     public String[] reserveSpecial = new String[3];
     public String[] reservePrice = new String[3];
+    public String[] coinMax10 = {" "," "," "," "," "," "," "," "," "," "," "," "," "};
 
-
+    public void coinArray (){
+        int j,k,l,m,f;
+        for(j=0;j<blackRegCoin;j++){
+            coinMax10[j]="Black";
+        }
+        for(k=j;k<whiteRegCoin+blackRegCoin;k++){
+            coinMax10[k]="White";
+        }
+        for(l=k;l<whiteRegCoin+blackRegCoin+greenRegCoin;l++){
+            coinMax10[l]="Green";
+        }
+        for(m=l;m<whiteRegCoin+blackRegCoin+greenRegCoin+blueRegCoin;m++){
+            coinMax10[m]="Blue";
+        }
+        for(f=m;f<whiteRegCoin+blackRegCoin+greenRegCoin+blueRegCoin+redRegCoin;f++){
+            coinMax10[f]="Red";
+         }
+    }
     public int getPoints() {
         return points;
     }
