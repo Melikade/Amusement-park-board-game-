@@ -1030,6 +1030,7 @@ public class Main extends JFrame {
                         underLabelClaw1.setText(" Remaining cards = " + prizeClaw.getClaw1());
                         points1.setText("Points:" + player1.getPoints());
                         numCard1.setText("Number of cards=" + player1.getNumOfCards());
+                        winningCondition();
                     } else {
                         JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
                     }
@@ -1053,6 +1054,7 @@ public class Main extends JFrame {
                         underLabelClaw2.setText(" Remaining cards = " + prizeClaw.getClaw2());
                         points1.setText("Points:" + player1.getPoints());
                         numCard1.setText("Number of cards=" + player1.getNumOfCards());
+                        winningCondition();
                     } else {
                         JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
                     }
@@ -1076,6 +1078,7 @@ public class Main extends JFrame {
                         underLabelClaw3.setText(" Remaining cards = " + prizeClaw.getClaw3());
                         points1.setText("Points:" + player1.getPoints());
                         numCard1.setText("Number of cards=" + player1.getNumOfCards());
+                        winningCondition();
                     }
                     else {
                         JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
@@ -1102,6 +1105,7 @@ public class Main extends JFrame {
                         underLabelClaw1.setText(" Remaining cards = " + prizeClaw.getClaw1());
                         points2.setText("Points:" + player2.getPoints());
                         numCard2.setText("Number of cards=" + player2.getNumOfCards());
+                        winningCondition();
                     } else {
                         JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
                     }
@@ -1125,6 +1129,7 @@ public class Main extends JFrame {
                         underLabelClaw2.setText(" Remaining cards = " + prizeClaw.getClaw2());
                         points2.setText("Points:" + player2.getPoints());
                         numCard2.setText("Number of cards=" + player2.getNumOfCards());
+                        winningCondition();
                     } else {
                         JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
                     }
@@ -1148,6 +1153,7 @@ public class Main extends JFrame {
                         underLabelClaw3.setText(" Remaining cards = " + prizeClaw.getClaw3());
                         points2.setText("Points:" + player2.getPoints());
                         numCard2.setText("Number of cards=" + player2.getNumOfCards());
+                        winningCondition();
                     }
                     else {
                         JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
@@ -1180,9 +1186,11 @@ public class Main extends JFrame {
         buy.addActionListener(e -> {
             if(player.turnPlayer%2==1){
                 buySetText(player1, coin1, specialCoins1, points1, numCard1, frame3, cardInfo);
+                winningCondition();
             }
             else{
                 buySetText(player2, coin2, specialCoins2, points2, numCard2, frame3, cardInfo);
+                winningCondition();
             }
         });
         cardPanel.add(choose);
@@ -2418,9 +2426,18 @@ public class Main extends JFrame {
             coins.setGold(coin);
         }
     }
+    private void winningCondition(){
+        if(player1.getPoints()>=15){
+            JOptionPane.showMessageDialog(Main.this,"**Player one has won the game!**");
+            System.exit(0);
+        }
+        if(player2.getPoints()>=15){
+            JOptionPane.showMessageDialog(Main.this,"**Player two has won the game!**");
+            System.exit(0);
+        }
+    }
 
     //یارو کم کردن تعداد سکه ها متودش رو بنویسم
-    // شرط بردن بازیکن ها رسیدن به ۱۵ است یا کارت ها تموم بشه
 
     public static void main(String[] args) {
         new Main();
