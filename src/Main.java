@@ -1029,10 +1029,10 @@ public class Main extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(player.turnPlayer%2==1){
-                    cardIdBuy(frame3,player1,cardInfo);
+                    buySetText(player1, coin1, specialCoins1, points1, numCard1, frame3, cardInfo);
                 }
                 else{
-                    cardIdBuy(frame3,player2,cardInfo);
+                    buySetText(player2, coin2, specialCoins2, points2, numCard2, frame3, cardInfo);
                 }
             }
         });
@@ -1040,6 +1040,32 @@ public class Main extends JFrame {
         cardPanel.add(reserve);
         cardPanel.add(buy);
         frame3.add(cardPanel);
+    }
+
+    //setting the text of labels when buying cards
+    private void buySetText(player player1, JLabel coin1, JLabel specialCoins1, JLabel points1, JLabel numCard1, JFrame frame3, String cardInfo) {
+        cardIdBuy(frame3, player1,cardInfo);
+        coin1.setText("Coins: "+"Green="+ player1.greenRegCoin+", White="+ player1.whiteRegCoin+", Black="+ player1.blackRegCoin+", red="+ player1.redRegCoin+", blue="+ player1.blueRegCoin+" ");
+        specialCoins1.setText("Special coins: "+"Green="+ player1.greenSpecCoin+", White="+ player1.whiteSpecCoin+", Black="+ player1.blackSpecCoin+", red="+ player1.redSpecCoin+", blue="+ player1.blueSpecCoin+", Gold="+ player1.goldCoin+" ");
+        points1.setText("Points:"+ player1.getPoints());
+        numCard1.setText("Number of cards="+ player1.getNumOfCards());
+        underLabel1.setText(" Remaining cards = "+cards.getTent1());
+        underLabel2.setText(" Remaining cards = "+cards.getTent2());
+        underLabel3.setText(" Remaining cards = "+cards.getTent3());
+        underLabel4.setText(" Remaining cards = "+cards.getTent4());
+        underLabel5.setText(" Remaining cards = "+cards.getFerris1());
+        underLabel6.setText(" Remaining cards = "+cards.getFerris2());
+        underLabel7.setText(" Remaining cards = "+cards.getFerris3());
+        underLabel8.setText(" Remaining cards = "+cards.getFerris4());
+        underLabel9.setText(" Remaining cards = "+cards.getCoaster1());
+        underLabel10.setText(" Remaining cards = "+cards.getCoaster2());
+        underLabel11.setText(" Remaining cards = "+cards.getCoaster3());
+        underLabel12.setText(" Remaining cards = "+cards.getCoaster4());
+        underMachLabel1.setText(" Remaining coins = "+coins.getBlack());
+        underMachLabel2.setText(" Remaining coins = "+coins.getWhite());
+        underMachLabel3.setText(" Remaining coins = "+coins.getGreen());
+        underMachLabel4.setText(" Remaining coins = "+coins.getBlue());
+        underMachLabel5.setText(" Remaining coins = "+coins.getRed());
     }
 
     //buying cards functions
