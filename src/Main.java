@@ -1016,30 +1016,44 @@ public class Main extends JFrame {
         JButton buy = new JButton("Purchase");
         reserve.addActionListener(e -> {
             if (player.turnPlayer%2==1){
-                cardIdRes(player1, cardInfo);
-                frame3.setVisible(false);
-                System.out.println(player1.goldCoin);
+                reserveSetText(cardInfo, frame3, player1, reservation1, specialCoins1);
             }
             else{
-                cardIdRes(player2, cardInfo);
-                frame3.setVisible(false);
+                reserveSetText(cardInfo, frame3, player2, reservation2, specialCoins2);
             }
         });
-        buy.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(player.turnPlayer%2==1){
-                    buySetText(player1, coin1, specialCoins1, points1, numCard1, frame3, cardInfo);
-                }
-                else{
-                    buySetText(player2, coin2, specialCoins2, points2, numCard2, frame3, cardInfo);
-                }
+        buy.addActionListener(e -> {
+            if(player.turnPlayer%2==1){
+                buySetText(player1, coin1, specialCoins1, points1, numCard1, frame3, cardInfo);
+            }
+            else{
+                buySetText(player2, coin2, specialCoins2, points2, numCard2, frame3, cardInfo);
             }
         });
         cardPanel.add(choose);
         cardPanel.add(reserve);
         cardPanel.add(buy);
         frame3.add(cardPanel);
+    }
+
+    //setting the text of labels when reserving cards
+    private void reserveSetText(String cardInfo, JFrame frame3, player player1, JLabel reservation1, JLabel specialCoins1) {
+        cardIdRes(player1, cardInfo);
+        reservation1.setText("Reserves:(Rank SpecialCoin)" + player1.reserveRank[0]+" "+ player1.reserveSpecial[0]+","+ player1.reserveRank[1]+" "+ player1.reserveSpecial[1]+","+ player1.reserveRank[2]+" "+ player1.reserveSpecial[2]+" ");
+        specialCoins1.setText("Special coins: "+"Green="+ player1.greenSpecCoin+", White="+ player1.whiteSpecCoin+", Black="+ player1.blackSpecCoin+", red="+ player1.redSpecCoin+", blue="+ player1.blueSpecCoin+", Gold="+ player1.goldCoin+" ");
+        underLabel1.setText(" Remaining cards = "+cards.getTent1());
+        underLabel2.setText(" Remaining cards = "+cards.getTent2());
+        underLabel3.setText(" Remaining cards = "+cards.getTent3());
+        underLabel4.setText(" Remaining cards = "+cards.getTent4());
+        underLabel5.setText(" Remaining cards = "+cards.getFerris1());
+        underLabel6.setText(" Remaining cards = "+cards.getFerris2());
+        underLabel7.setText(" Remaining cards = "+cards.getFerris3());
+        underLabel8.setText(" Remaining cards = "+cards.getFerris4());
+        underLabel9.setText(" Remaining cards = "+cards.getCoaster1());
+        underLabel10.setText(" Remaining cards = "+cards.getCoaster2());
+        underLabel11.setText(" Remaining cards = "+cards.getCoaster3());
+        underLabel12.setText(" Remaining cards = "+cards.getCoaster4());
+        frame3.setVisible(false);
     }
 
     //setting the text of labels when buying cards
