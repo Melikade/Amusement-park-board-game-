@@ -434,6 +434,12 @@ public class Main extends JFrame {
             underLabelClaw3.setForeground(color);
             cardCase.add(underLabelClaw3,BorderLayout.SOUTH);
         }
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clawOpt(clawInfo);
+            }
+        });
         cardCase.add(button,BorderLayout.CENTER);
         panel.add(cardCase, gbc);
 
@@ -1005,6 +1011,155 @@ public class Main extends JFrame {
             underMachLabel3.setText(" Remaining coins = " + coins.getGreen());
         }
     }
+
+    //clicked on a prize claw card
+    private void clawOpt(String clawInfo){
+        if(player.turnPlayer%2==0){
+            if(clawInfo.equals("claw1")){
+                if(prizeClaw.getClaw1()>0) {
+                    if (player1.whiteSpecCoin >= 4 && player1.blueSpecCoin >= 4) {
+                        int points = player1.getPoints();
+                        points += 3;
+                        player1.setPoints(points);
+                        int claw = prizeClaw.getClaw1();
+                        claw--;
+                        prizeClaw.setClaw1(claw);
+                        int num = player1.getNumOfCards();
+                        num++;
+                        player1.setNumOfCards(num);
+                        underLabelClaw1.setText(" Remaining cards = " + prizeClaw.getClaw1());
+                        points1.setText("Points:" + player1.getPoints());
+                        numCard1.setText("Number of cards=" + player1.getNumOfCards());
+                    } else {
+                        JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(Main.this, "Sorry, this card is out of stock!");
+                }
+            }
+            else if(clawInfo.equals("claw2")){
+                if(prizeClaw.getClaw2()>0) {
+                    if (player1.redSpecCoin >= 5 && player1.blackSpecCoin >= 4) {
+                        int points = player1.getPoints();
+                        points += 4;
+                        player1.setPoints(points);
+                        int claw = prizeClaw.getClaw2();
+                        claw--;
+                        prizeClaw.setClaw2(claw);
+                        int num = player1.getNumOfCards();
+                        num++;
+                        player1.setNumOfCards(num);
+                        underLabelClaw2.setText(" Remaining cards = " + prizeClaw.getClaw2());
+                        points1.setText("Points:" + player1.getPoints());
+                        numCard1.setText("Number of cards=" + player1.getNumOfCards());
+                    } else {
+                        JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(Main.this, "Sorry, this card is out of stock!");
+                }
+            }
+            else {
+                if(prizeClaw.getClaw3()>0) {
+                    if (player1.redSpecCoin >= 8 && player1.greenSpecCoin >= 2) {
+                        int points = player1.getPoints();
+                        points += 4;
+                        player1.setPoints(points);
+                        int claw = prizeClaw.getClaw3();
+                        claw--;
+                        prizeClaw.setClaw3(claw);
+                        int num = player1.getNumOfCards();
+                        num++;
+                        player1.setNumOfCards(num);
+                        underLabelClaw3.setText(" Remaining cards = " + prizeClaw.getClaw3());
+                        points1.setText("Points:" + player1.getPoints());
+                        numCard1.setText("Number of cards=" + player1.getNumOfCards());
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(Main.this, "Sorry, this card is out of stock!");
+                }
+            }
+        }
+        else{
+            if(clawInfo.equals("claw1")){
+                if(prizeClaw.getClaw1()>0) {
+                    if (player2.whiteSpecCoin >= 4 && player2.blueSpecCoin >= 4) {
+                        int points = player2.getPoints();
+                        points += 3;
+                        player2.setPoints(points);
+                        int claw = prizeClaw.getClaw1();
+                        claw--;
+                        prizeClaw.setClaw1(claw);
+                        int num = player2.getNumOfCards();
+                        num++;
+                        player2.setNumOfCards(num);
+                        underLabelClaw1.setText(" Remaining cards = " + prizeClaw.getClaw1());
+                        points2.setText("Points:" + player2.getPoints());
+                        numCard2.setText("Number of cards=" + player2.getNumOfCards());
+                    } else {
+                        JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(Main.this, "Sorry, this card is out of stock!");
+                }
+            }
+            else if(clawInfo.equals("claw2")){
+                if(prizeClaw.getClaw2()>0) {
+                    if (player2.redSpecCoin >= 5 && player2.blackSpecCoin >= 4) {
+                        int points = player2.getPoints();
+                        points += 4;
+                        player2.setPoints(points);
+                        int claw = prizeClaw.getClaw2();
+                        claw--;
+                        prizeClaw.setClaw2(claw);
+                        int num = player2.getNumOfCards();
+                        num++;
+                        player2.setNumOfCards(num);
+                        underLabelClaw2.setText(" Remaining cards = " + prizeClaw.getClaw2());
+                        points2.setText("Points:" + player2.getPoints());
+                        numCard2.setText("Number of cards=" + player2.getNumOfCards());
+                    } else {
+                        JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(Main.this, "Sorry, this card is out of stock!");
+                }
+            }
+            else {
+                if(prizeClaw.getClaw3()>0) {
+                    if (player2.redSpecCoin >= 8 && player2.greenSpecCoin >= 2) {
+                        int points = player2.getPoints();
+                        points += 4;
+                        player2.setPoints(points);
+                        int claw = prizeClaw.getClaw3();
+                        claw--;
+                        prizeClaw.setClaw3(claw);
+                        int num = player2.getNumOfCards();
+                        num++;
+                        player2.setNumOfCards(num);
+                        underLabelClaw3.setText(" Remaining cards = " + prizeClaw.getClaw3());
+                        points2.setText("Points:" + player2.getPoints());
+                        numCard2.setText("Number of cards=" + player2.getNumOfCards());
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(Main.this, "You dont have enough special coins to buy this card!");
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(Main.this, "Sorry, this card is out of stock!");
+                }
+            }
+        }
+    }
+
     // clicked on a card
     private void cardOpt(String cardInfo){
         JFrame frame3 = new JFrame();
@@ -2266,7 +2421,6 @@ public class Main extends JFrame {
 
     //یارو کم کردن تعداد سکه ها متودش رو بنویسم
     // شرط بردن بازیکن ها رسیدن به ۱۵ است یا کارت ها تموم بشه
-    // انتهاب پرایز کلاوو کارد
 
     public static void main(String[] args) {
         new Main();
