@@ -1,7 +1,7 @@
 package player;
 
 public class player {
-    public static int turnPlayer=0;
+    public static int turnPlayer=1;
     public int greenRegCoin=0;
     public int blueRegCoin=0;
     public int whiteRegCoin=0;
@@ -20,7 +20,14 @@ public class player {
     public String[] reserveSpecial = new String[3];
     public String[] reservePrice = new String[3];
     public String[] coinMax10 = {" "," "," "," "," "," "," "," "," "," "," "," "," "};
-
+    public static int showPlayerTurn(){
+        if(turnPlayer%2==1){
+            return 1;
+        }
+        else{
+            return 2;
+        }
+    }
     public void coinArray (){
         int i,j,k,l,m,f;
         for(j=0;j<blackRegCoin;j++){

@@ -45,6 +45,7 @@ public class Main extends JFrame {
     JLabel underLabelClaw1;
     JLabel underLabelClaw2;
     JLabel underLabelClaw3;
+    JLabel turn_player;
 
 
 
@@ -60,7 +61,8 @@ public class Main extends JFrame {
     }
 
     public void initLeftPanel() {
-        JPanel leftPanel = new JPanel(new GridLayout(12, 0, 0, 10));
+        JPanel leftPanel = new JPanel(new GridLayout(13, 0, 0, 10));
+        turn_player = new JLabel("PLAYER "+player.showPlayerTurn()+"'S TURN");
         JLabel playerOne = new JLabel("«PLAYER ONE»");
         coin1 = new JLabel("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
         specialCoins1 = new JLabel("Special coins: "+"Green="+player1.greenSpecCoin+", White="+player1.whiteSpecCoin+", Black="+player1.blackSpecCoin+", red="+player1.redSpecCoin+", blue="+player1.blueSpecCoin+", Gold="+player1.goldCoin+" ");
@@ -76,6 +78,12 @@ public class Main extends JFrame {
         Font font = new Font(Font.DIALOG, Font.PLAIN, 15);
         labels(playerOne, coin1, specialCoins1, reservation1, points1, numCard1, font, Color.red, Color.pink);
         labels(playerTwo, coin2, specialCoins2, reservation2, points2, numCard2, font, Color.BLACK, Color.GRAY);
+        turn_player.setFont(font);
+        turn_player.setHorizontalTextPosition(SwingConstants.HORIZONTAL);
+        turn_player.setForeground(Color.white);
+        turn_player.setOpaque(true);
+        turn_player.setBackground(Color.black);
+        leftPanel.add(turn_player);
         leftPanel.add(playerOne);
         leftPanel.add(coin1);
         leftPanel.add(specialCoins1);
@@ -449,6 +457,7 @@ public class Main extends JFrame {
                 }
                 frame1.setVisible(false);
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
             }
             else if (colorOfMach.equals("black") && coins.getBlack()==4){
                 if(player.turnPlayer%2==1){
@@ -460,6 +469,7 @@ public class Main extends JFrame {
                 }
                 frame1.setVisible(false);
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
             }
             else if (colorOfMach.equals("red") && coins.getRed()==4){
                 if(player.turnPlayer%2==1){
@@ -471,6 +481,7 @@ public class Main extends JFrame {
                 }
                 frame1.setVisible(false);
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
             }
             else if (colorOfMach.equals("white") && coins.getWhite()==4){
                 if(player.turnPlayer%2==1){
@@ -482,6 +493,7 @@ public class Main extends JFrame {
                 }
                 frame1.setVisible(false);
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
             }
             else if (colorOfMach.equals("green") && coins.getGreen()==4){
                 if(player.turnPlayer%2==1){
@@ -493,6 +505,7 @@ public class Main extends JFrame {
                 }
                 frame1.setVisible(false);
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
             }
             else {
                 JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machine!");
@@ -533,6 +546,7 @@ public class Main extends JFrame {
                     frame2.setVisible(false);
                     frame1.setVisible(false);
                     player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 }
                 else{
                     JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
@@ -558,6 +572,7 @@ public class Main extends JFrame {
                     frame2.setVisible(false);
                     frame1.setVisible(false);
                     player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 }
                 else{
                     JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
@@ -582,6 +597,7 @@ public class Main extends JFrame {
                     frame2.setVisible(false);
                     frame1.setVisible(false);
                     player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 }
                 else{
                     JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
@@ -608,6 +624,7 @@ public class Main extends JFrame {
                     frame2.setVisible(false);
                     frame1.setVisible(false);
                     player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 }
                 else{
                     JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
@@ -634,6 +651,7 @@ public class Main extends JFrame {
                     frame2.setVisible(false);
                     frame1.setVisible(false);
                     player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 }
                 else{
                     JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
@@ -660,6 +678,7 @@ public class Main extends JFrame {
                     frame2.setVisible(false);
                     frame1.setVisible(false);
                     player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 }
                 else{
                     JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
@@ -686,6 +705,7 @@ public class Main extends JFrame {
                     frame2.setVisible(false);
                     frame1.setVisible(false);
                     player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 }
                 else{
                     JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
@@ -712,6 +732,7 @@ public class Main extends JFrame {
                     frame2.setVisible(false);
                     frame1.setVisible(false);
                     player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 }
                 else{
                     JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
@@ -738,6 +759,7 @@ public class Main extends JFrame {
                     frame2.setVisible(false);
                     frame1.setVisible(false);
                     player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 }
                 else{
                     JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
@@ -764,6 +786,7 @@ public class Main extends JFrame {
                     frame2.setVisible(false);
                     frame1.setVisible(false);
                     player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 }
                 else{
                     JOptionPane.showMessageDialog(Main.this,"There isn't enough coins in the machines!");
@@ -1256,6 +1279,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.redSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getTent1();
                 card--;
                 cards.setTent1(card);
@@ -1274,6 +1298,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.redSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getTent1();
                 card--;
                 cards.setTent1(card);
@@ -1296,6 +1321,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.redSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getTent1();
                 card--;
                 cards.setTent1(card);
@@ -1333,6 +1359,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.greenSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getTent3();
                 card--;
                 cards.setTent3(card);
@@ -1373,6 +1400,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.greenSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getTent3();
                 card--;
                 cards.setTent3(card);
@@ -1410,6 +1438,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.blueSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getTent2();
                 card--;
                 cards.setTent2(card);
@@ -1450,6 +1479,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.blueSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getTent2();
                 card--;
                 cards.setTent2(card);
@@ -1485,6 +1515,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.blackSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getTent4();
                 card--;
                 cards.setTent4(card);
@@ -1525,6 +1556,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.blackSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getTent4();
                 card--;
                 cards.setTent4(card);
@@ -1568,6 +1600,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.redSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getFerris1();
                 card--;
                 cards.setFerris1(card);
@@ -1620,6 +1653,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.redSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getFerris1();
                 card--;
                 cards.setFerris1(card);
@@ -1655,6 +1689,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.blackSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getFerris2();
                 card--;
                 cards.setFerris2(card);
@@ -1695,6 +1730,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.blackSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getFerris2();
                 card--;
                 cards.setFerris2(card);
@@ -1730,6 +1766,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.greenSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getFerris3();
                 card--;
                 cards.setFerris3(card);
@@ -1770,6 +1807,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.greenSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getFerris3();
                 card--;
                 cards.setFerris3(card);
@@ -1805,6 +1843,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.whiteSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getFerris4();
                 card--;
                 cards.setFerris4(card);
@@ -1845,6 +1884,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.whiteSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getFerris4();
                 card--;
                 cards.setFerris4(card);
@@ -1880,6 +1920,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.whiteSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getCoaster1();
                 card--;
                 cards.setCoaster1(card);
@@ -1920,6 +1961,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.whiteSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getCoaster1();
                 card--;
                 cards.setCoaster1(card);
@@ -1955,6 +1997,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.blueSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getCoaster2();
                 card--;
                 cards.setCoaster2(card);
@@ -1995,6 +2038,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.blueSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getCoaster2();
                 card--;
                 cards.setCoaster2(card);
@@ -2038,6 +2082,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.redSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getCoaster3();
                 card--;
                 cards.setCoaster3(card);
@@ -2090,6 +2135,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.redSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getCoaster3();
                 card--;
                 cards.setCoaster3(card);
@@ -2133,6 +2179,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.blackSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getCoaster4();
                 card--;
                 cards.setCoaster4(card);
@@ -2185,6 +2232,7 @@ public class Main extends JFrame {
                 player1.setNumOfCards(num);
                 player1.blackSpecCoin++;
                 player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
                 int card = cards.getCoaster4();
                 card--;
                 cards.setCoaster4(card);
@@ -2414,6 +2462,7 @@ public class Main extends JFrame {
         num++;
         player1.setNumOfReserves(num);
         player.turnPlayer++;
+                    turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
         if(coins.getGold()>0) {
             player1.goldCoin++;
             int coin =coins.getGold();
