@@ -22,7 +22,7 @@ public class player {
     public String[] coinMax10 = {" "," "," "," "," "," "," "," "," "," "," "," "," "};
 
     public void coinArray (){
-        int j,k,l,m,f;
+        int i,j,k,l,m,f;
         for(j=0;j<blackRegCoin;j++){
             coinMax10[j]="Black";
         }
@@ -38,6 +38,9 @@ public class player {
         for(f=m;f<whiteRegCoin+blackRegCoin+greenRegCoin+blueRegCoin+redRegCoin;f++){
             coinMax10[f]="Red";
          }
+        for(i=f;i<13;i++){
+            coinMax10[f]=" ";
+        }
     }
     public int getPoints() {
         return points;

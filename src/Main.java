@@ -360,22 +360,11 @@ public class Main extends JFrame {
         }
         //action listeners
         if(!cardOrMach) {
-            button.addActionListener(new ActionListener() {
-
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    slotMachOpt(cardOrMachInfo);
-                }
-            });
+            button.addActionListener(e -> slotMachOpt(cardOrMachInfo));
         }
         else{
 
-              button.addActionListener(new ActionListener() {
-                  @Override
-                  public void actionPerformed(ActionEvent e) {
-                      cardOpt(cardOrMachInfo);
-                  }
-              });
+              button.addActionListener(e -> cardOpt(cardOrMachInfo));
         }
         cardCase.add(button,BorderLayout.CENTER);
         panel.add(cardCase, gbc);
@@ -434,12 +423,7 @@ public class Main extends JFrame {
             underLabelClaw3.setForeground(color);
             cardCase.add(underLabelClaw3,BorderLayout.SOUTH);
         }
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                clawOpt(clawInfo);
-            }
-        });
+        button.addActionListener(e -> clawOpt(clawInfo));
         cardCase.add(button,BorderLayout.CENTER);
         panel.add(cardCase, gbc);
 
@@ -2454,7 +2438,8 @@ public class Main extends JFrame {
             JPanel coin10Opt = new JPanel(new GridLayout(15,1,10,10));
             frame10.setSize(600,600);
             frame10.setVisible(true);
-            JLabel question = new JLabel("Player one,please select the coins which you want to return to the slot machine in order to have less than 11 coins");
+            JLabel question = new JLabel("Player one, please select the coins which you want to return to the slot machine in order to have less than 11 coins");
+            player1.coinArray();
             JButton button0 = new JButton(player1.coinMax10[0]);
             JButton button1 = new JButton(player1.coinMax10[1]);
             JButton button2 = new JButton(player1.coinMax10[2]);
@@ -2469,19 +2454,239 @@ public class Main extends JFrame {
             JButton button11 = new JButton(player1.coinMax10[3]);
             JButton button12 = new JButton(player1.coinMax10[3]);
             JButton end = new JButton("Done!");
-            button0.addActionListener(e -> reduceCoin(0));
-            button1.addActionListener(e -> reduceCoin(1));
-            button2.addActionListener(e -> reduceCoin(2));
-            button3.addActionListener(e -> reduceCoin(3));
-            button4.addActionListener(e -> reduceCoin(4));
-            button5.addActionListener(e -> reduceCoin(5));
-            button6.addActionListener(e -> reduceCoin(6));
-            button7.addActionListener(e -> reduceCoin(7));
-            button8.addActionListener(e -> reduceCoin(8));
-            button9.addActionListener(e -> reduceCoin(9));
-            button10.addActionListener(e -> reduceCoin(10));
-            button11.addActionListener(e -> reduceCoin(11));
-            button12.addActionListener(e -> reduceCoin(12));
+            button0.addActionListener(e ->{
+                reduceCoin(0);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button1.addActionListener(e -> {
+                reduceCoin(1);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+                });
+            button2.addActionListener(e -> {
+                reduceCoin(2);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button3.addActionListener(e -> {
+                reduceCoin(3);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button4.addActionListener(e -> {
+                reduceCoin(4);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button5.addActionListener(e -> {
+                reduceCoin(5);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button6.addActionListener(e -> {
+                reduceCoin(6);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button7.addActionListener(e -> {
+                reduceCoin(7);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button8.addActionListener(e -> {
+                reduceCoin(8);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button9.addActionListener(e -> {
+                reduceCoin(9);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button10.addActionListener(e -> {
+                reduceCoin(10);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button11.addActionListener(e -> {
+                reduceCoin(11);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
+            button12.addActionListener(e -> {
+                reduceCoin(12);
+                player1.coinArray();
+                button0.setText(player1.coinMax10[0]);
+                button1.setText(player1.coinMax10[1]);
+                button2.setText(player1.coinMax10[2]);
+                button3.setText(player1.coinMax10[3]);
+                button4.setText(player1.coinMax10[4]);
+                button5.setText(player1.coinMax10[5]);
+                button6.setText(player1.coinMax10[6]);
+                button7.setText(player1.coinMax10[7]);
+                button8.setText(player1.coinMax10[8]);
+                button9.setText(player1.coinMax10[9]);
+                button10.setText(player1.coinMax10[10]);
+                button11.setText(player1.coinMax10[11]);
+                button12.setText(player1.coinMax10[12]);
+
+            });
             end.addActionListener(e -> frame10.setVisible(false));
             coin10Opt.add(question);
             coin10Opt.add(button0);
@@ -2497,42 +2702,252 @@ public class Main extends JFrame {
             coin10Opt.add(button10);
             coin10Opt.add(button11);
             coin10Opt.add(button12);
+            coin10Opt.add(end);
             frame10.add(coin10Opt);
         }
 
-        if(player2.blueRegCoin+player2.blackRegCoin+player2.redRegCoin+player2.whiteRegCoin+player2.greenRegCoin>10){
+        else if(player2.blueRegCoin+player2.blackRegCoin+player2.redRegCoin+player2.whiteRegCoin+player2.greenRegCoin>10){
             JFrame frame10 = new JFrame();
             JPanel coin10Opt = new JPanel(new GridLayout(15,1,10,10));
-            frame10.setSize(600,600);
+            frame10.setSize(800,800);
             frame10.setVisible(true);
-            JLabel question = new JLabel("Player two,please select the coins which you want to return to the slot machine in order to have less than 11 coins");
-            JButton button0 = new JButton(player1.coinMax10[0]);
-            JButton button1 = new JButton(player1.coinMax10[1]);
-            JButton button2 = new JButton(player1.coinMax10[2]);
-            JButton button3 = new JButton(player1.coinMax10[3]);
-            JButton button4 = new JButton(player1.coinMax10[3]);
-            JButton button5 = new JButton(player1.coinMax10[3]);
-            JButton button6 = new JButton(player1.coinMax10[3]);
-            JButton button7 = new JButton(player1.coinMax10[3]);
-            JButton button8 = new JButton(player1.coinMax10[3]);
-            JButton button9 = new JButton(player1.coinMax10[3]);
-            JButton button10 = new JButton(player1.coinMax10[3]);
-            JButton button11 = new JButton(player1.coinMax10[3]);
-            JButton button12 = new JButton(player1.coinMax10[3]);
+            player2.coinArray();
+            JLabel question = new JLabel("Player two, please select the coins which you want to return to the slot machine in order to have less than 11 coins");
+            JButton button0 = new JButton(player2.coinMax10[0]);
+            JButton button1 = new JButton(player2.coinMax10[1]);
+            JButton button2 = new JButton(player2.coinMax10[2]);
+            JButton button3 = new JButton(player2.coinMax10[3]);
+            JButton button4 = new JButton(player2.coinMax10[3]);
+            JButton button5 = new JButton(player2.coinMax10[3]);
+            JButton button6 = new JButton(player2.coinMax10[3]);
+            JButton button7 = new JButton(player2.coinMax10[3]);
+            JButton button8 = new JButton(player2.coinMax10[3]);
+            JButton button9 = new JButton(player2.coinMax10[3]);
+            JButton button10 = new JButton(player2.coinMax10[3]);
+            JButton button11 = new JButton(player2.coinMax10[3]);
+            JButton button12 = new JButton(player2.coinMax10[3]);
             JButton end = new JButton("Done!");
-            button0.addActionListener(e -> reduceCoin2(0));
-            button1.addActionListener(e -> reduceCoin2(1));
-            button2.addActionListener(e -> reduceCoin2(2));
-            button3.addActionListener(e -> reduceCoin2(3));
-            button4.addActionListener(e -> reduceCoin2(4));
-            button5.addActionListener(e -> reduceCoin2(5));
-            button6.addActionListener(e -> reduceCoin2(6));
-            button7.addActionListener(e -> reduceCoin2(7));
-            button8.addActionListener(e -> reduceCoin2(8));
-            button9.addActionListener(e -> reduceCoin2(9));
-            button10.addActionListener(e -> reduceCoin2(10));
-            button11.addActionListener(e -> reduceCoin2(11));
-            button12.addActionListener(e -> reduceCoin2(12));
+            button0.addActionListener(e ->{
+                reduceCoin2(0);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button1.addActionListener(e -> {
+                reduceCoin2(1);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+                });
+            button2.addActionListener(e -> {
+                reduceCoin2(2);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button3.addActionListener(e -> {
+                reduceCoin2(3);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button4.addActionListener(e -> {
+                reduceCoin2(4);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button5.addActionListener(e -> {
+                reduceCoin2(5);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button6.addActionListener(e -> {
+                reduceCoin2(6);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button7.addActionListener(e -> {
+                reduceCoin2(7);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button8.addActionListener(e -> {
+                reduceCoin2(8);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button9.addActionListener(e -> {
+                reduceCoin2(9);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button10.addActionListener(e -> {
+                reduceCoin2(10);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button11.addActionListener(e -> {
+                reduceCoin2(11);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
+            button12.addActionListener(e -> {
+                reduceCoin2(12);
+                player2.coinArray();
+                button0.setText(player2.coinMax10[0]);
+                button1.setText(player2.coinMax10[1]);
+                button2.setText(player2.coinMax10[2]);
+                button3.setText(player2.coinMax10[3]);
+                button4.setText(player2.coinMax10[4]);
+                button5.setText(player2.coinMax10[5]);
+                button6.setText(player2.coinMax10[6]);
+                button7.setText(player2.coinMax10[7]);
+                button8.setText(player2.coinMax10[8]);
+                button9.setText(player2.coinMax10[9]);
+                button10.setText(player2.coinMax10[10]);
+                button11.setText(player2.coinMax10[11]);
+                button12.setText(player2.coinMax10[12]);
+            });
             end.addActionListener(e -> frame10.setVisible(false));
             coin10Opt.add(question);
             coin10Opt.add(button0);
@@ -2548,9 +2963,11 @@ public class Main extends JFrame {
             coin10Opt.add(button10);
             coin10Opt.add(button11);
             coin10Opt.add(button12);
+            coin10Opt.add(end);
             frame10.add(coin10Opt);
         }
     }
+
     private void reduceCoin2 (int i){
         player2.coinArray();
         if(player2.coinMax10[i].equals("Black")){
@@ -2585,7 +3002,7 @@ public class Main extends JFrame {
             underMachLabel4.setText(" Remaining coins = "+coins.getBlue());
             coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
         }
-        else{
+        else if(player2.coinMax10[i].equals("Red")){
             player2.redRegCoin--;
             int coin = coins.getRed();
             coin++;
@@ -2593,48 +3010,54 @@ public class Main extends JFrame {
             underMachLabel5.setText(" Remaining coins = "+coins.getRed());
             coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
         }
+        else{
+
+        }
     }
     private void reduceCoin (int i){
-        player2.coinArray();
-        if(player2.coinMax10[i].equals("Black")){
-            player2.blackRegCoin--;
+        player1.coinArray();
+        if(player1.coinMax10[i].equals("Black")){
+            player1.blackRegCoin--;
             int coin = coins.getBlack();
             coin++;
             coins.setBlack(coin);
             underMachLabel1.setText(" Remaining coins = "+coins.getBlack());
-            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+            coin2.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
         }
-        else if(player2.coinMax10[i].equals("White")){
-            player2.whiteRegCoin--;
+        else if(player1.coinMax10[i].equals("White")){
+            player1.whiteRegCoin--;
             int coin = coins.getWhite();
             coin++;
             coins.setWhite(coin);
             underMachLabel2.setText(" Remaining coins = "+coins.getWhite());
-            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+            coin2.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
         }
-        else if(player2.coinMax10[i].equals("Green")){
-            player2.greenRegCoin--;
+        else if(player1.coinMax10[i].equals("Green")){
+            player1.greenRegCoin--;
             int coin = coins.getGreen();
             coin++;
             coins.setGreen(coin);
             underMachLabel3.setText(" Remaining coins = "+coins.getGreen());
-            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+            coin2.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
         }
-        else if(player2.coinMax10[i].equals("Blue")){
-            player2.blueRegCoin--;
+        else if(player1.coinMax10[i].equals("Blue")){
+            player1.blueRegCoin--;
             int coin = coins.getBlue();
             coin++;
             coins.setBlue(coin);
             underMachLabel4.setText(" Remaining coins = "+coins.getBlue());
-            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+            coin2.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
         }
-        else{
-            player2.redRegCoin--;
+        else if(player1.coinMax10[i].equals("Red")){
+            player1.redRegCoin--;
             int coin = coins.getRed();
             coin++;
             coins.setRed(coin);
             underMachLabel5.setText(" Remaining coins = "+coins.getRed());
-            coin2.setText("Coins: " + "Green=" + player2.greenRegCoin + ", White=" + player2.whiteRegCoin + ", Black=" + player2.blackRegCoin + ", red=" + player2.redRegCoin + ", blue=" + player2.blueRegCoin + " ");
+            coin2.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+        }
+        else{
+
         }
     }
 
