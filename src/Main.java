@@ -2485,10 +2485,10 @@ public class Main extends JFrame {
         if(player1.blueRegCoin+player1.blackRegCoin+player1.redRegCoin+player1.whiteRegCoin+player1.greenRegCoin>10){
             JFrame frame10 = new JFrame();
             JPanel coin10Opt = new JPanel(new GridLayout(15,1,10,10));
-            frame10.setSize(600,600);
+            frame10.setSize(800,800);
             frame10.setVisible(true);
             JLabel question = new JLabel("Player one, please select the coins which you want to return to the slot machine in order to have less than 11 coins");
-            player1.coinArray();
+            //player1.coinArray();
             JButton button0 = new JButton(player1.coinMax10[0]);
             JButton button1 = new JButton(player1.coinMax10[1]);
             JButton button2 = new JButton(player1.coinMax10[2]);
@@ -3071,7 +3071,7 @@ public class Main extends JFrame {
             coin++;
             coins.setBlack(coin);
             underMachLabel1.setText(" Remaining coins = "+coins.getBlack());
-            coin2.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+            coin1.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
         }
         else if(player1.coinMax10[i].equals("White")){
             player1.whiteRegCoin--;
@@ -3079,7 +3079,7 @@ public class Main extends JFrame {
             coin++;
             coins.setWhite(coin);
             underMachLabel2.setText(" Remaining coins = "+coins.getWhite());
-            coin2.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+            coin1.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
         }
         else if(player1.coinMax10[i].equals("Green")){
             player1.greenRegCoin--;
@@ -3087,7 +3087,7 @@ public class Main extends JFrame {
             coin++;
             coins.setGreen(coin);
             underMachLabel3.setText(" Remaining coins = "+coins.getGreen());
-            coin2.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+            coin1.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
         }
         else if(player1.coinMax10[i].equals("Blue")){
             player1.blueRegCoin--;
@@ -3095,7 +3095,7 @@ public class Main extends JFrame {
             coin++;
             coins.setBlue(coin);
             underMachLabel4.setText(" Remaining coins = "+coins.getBlue());
-            coin2.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+            coin1.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
         }
         else if(player1.coinMax10[i].equals("Red")){
             player1.redRegCoin--;
@@ -3103,7 +3103,7 @@ public class Main extends JFrame {
             coin++;
             coins.setRed(coin);
             underMachLabel5.setText(" Remaining coins = "+coins.getRed());
-            coin2.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
+            coin1.setText("Coins: " + "Green=" + player1.greenRegCoin + ", White=" + player1.whiteRegCoin + ", Black=" + player1.blackRegCoin + ", red=" + player1.redRegCoin + ", blue=" + player1.blueRegCoin + " ");
         }
         else{
 
