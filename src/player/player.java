@@ -2,11 +2,11 @@ package player;
 
 public class player {
     public static int turnPlayer=1;
-    public int greenRegCoin=4;
-    public int blueRegCoin=4;
-    public int whiteRegCoin=4;
-    public int blackRegCoin=4;
-    public int redRegCoin=4;
+    public int greenRegCoin=0;
+    public int blueRegCoin=0;
+    public int whiteRegCoin=0;
+    public int blackRegCoin=0;
+    public int redRegCoin=0;
     public int greenSpecCoin=0;
     public int blueSpecCoin=0;
     public int whiteSpecCoin=0;

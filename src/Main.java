@@ -151,66 +151,66 @@ public class Main extends JFrame {
         ImageIcon tent = new ImageIcon("pictures/tent.png");
         ImageIcon claw = new ImageIcon("pictures/claw.png");
 
-        JLabel claw1rank = new JLabel("3");
-        JLabel claw2rank = new JLabel("4");
-        JLabel claw3rank = new JLabel("4");
-        JLabel claw1price = new JLabel("4 White + 4 Blue");
-        JLabel claw2price = new JLabel("5 Red + 4 Black");
-        JLabel claw3price = new JLabel("2 Green + 8 Red");
+        JLabel claw1rank = new JLabel(cards.clawRank1);
+        JLabel claw2rank = new JLabel(cards.clawRank2);
+        JLabel claw3rank = new JLabel(cards.clawRank3);
+        JLabel claw1price = new JLabel(cards.claw1price);
+        JLabel claw2price = new JLabel(cards.claw2price);
+        JLabel claw3price = new JLabel(cards.claw3price);
         JLabel special = new JLabel();
 
         addComponent(rightPanel, claw, gbc, 0, 0, true, true, special, claw1rank, claw1price, Color.MAGENTA, prizeClaw.getClaw1(), "claw1");
         addComponent(rightPanel, claw, gbc, 1, 0,true, true, special, claw2rank, claw2price, Color.MAGENTA, prizeClaw.getClaw2(), "claw2");
         addComponent(rightPanel, claw, gbc, 2, 0,true, true, special, claw3rank, claw3price, Color.MAGENTA, prizeClaw.getClaw3(), "claw3");
 
-        JLabel tent1rank = new JLabel("0");
-        JLabel tent2rank = new JLabel("1");
-        JLabel tent3rank = new JLabel("1");
-        JLabel tent4rank= new JLabel("0");
-        JLabel tent1price = new JLabel("4 Red");
-        JLabel tent2price = new JLabel("2 White + 3 Blue");
-        JLabel tent3price = new JLabel("1 Green + 5 Black");
-        JLabel tent4price = new JLabel("2 Red + 2 Green");
-        JLabel tent1special = new JLabel("RED");
-        JLabel tent2special = new JLabel("BLUE");
-        JLabel tent3special = new JLabel("GREEN");
-        JLabel tent4special = new JLabel("BLACK");
+        JLabel tent1rank = new JLabel(cards.tent1rank);
+        JLabel tent2rank = new JLabel(cards.tent2rank);
+        JLabel tent3rank = new JLabel(cards.tent3rank);
+        JLabel tent4rank= new JLabel(cards.tent4rank);
+        JLabel tent1price = new JLabel(cards.tent1price);
+        JLabel tent2price = new JLabel(cards.tent2price);
+        JLabel tent3price = new JLabel(cards.tent3price);
+        JLabel tent4price = new JLabel(cards.tent4price);
+        JLabel tent1special = new JLabel(cards.tent1special);
+        JLabel tent2special = new JLabel(cards.tent2special);
+        JLabel tent3special = new JLabel(cards.tent3special);
+        JLabel tent4special = new JLabel(cards.tent4special);
 
         addComponent(rightPanel, tent, gbc, 0, 1, true, false, tent1special, tent1rank, tent1price, Color.BLUE, true, cards.getTent1(), 0  , "tent1");
         addComponent(rightPanel, tent, gbc, 1, 1,true, false, tent2special, tent2rank, tent2price, Color.BLUE, true, cards.getTent2(), 0 , "tent2");
         addComponent(rightPanel, tent, gbc, 2, 1,true, false, tent3special, tent3rank , tent3price, Color.BLUE,true, cards.getTent3(), 0 , "tent3");
         addComponent(rightPanel, tent, gbc, 3, 1,true, false, tent4special, tent4rank, tent4price, Color.BLUE, true, cards.getTent4(), 0 , "tent4");
 
-        JLabel ferris1rank = new JLabel("2");
-        JLabel ferris2rank = new JLabel("3");
-        JLabel ferris3rank = new JLabel("4");
-        JLabel ferris4rank= new JLabel("2");
-        JLabel ferris1price = new JLabel("2 Red + 2 Blue + 2 White");
-        JLabel ferris2price = new JLabel("6 Black + 2 Green");
-        JLabel ferris3price = new JLabel("4 Blue + 3 White");
-        JLabel ferris4price = new JLabel("3 Red + 3 White");
-        JLabel ferris1special = new JLabel("RED");
-        JLabel ferris2special = new JLabel("BLACK");
-        JLabel ferris3special = new JLabel("GREEN");
-        JLabel ferris4special = new JLabel("WHITE");
+        JLabel ferris1rank = new JLabel(cards.ferris1rank);
+        JLabel ferris2rank = new JLabel(cards.ferris2rank);
+        JLabel ferris3rank = new JLabel(cards.ferris3rank);
+        JLabel ferris4rank= new JLabel(cards.ferris4rank);
+        JLabel ferris1price = new JLabel(cards.ferris1price);
+        JLabel ferris2price = new JLabel(cards.ferris2price);
+        JLabel ferris3price = new JLabel(cards.ferris3price);
+        JLabel ferris4price = new JLabel(cards.ferris4price);
+        JLabel ferris1special = new JLabel(cards.ferris1special);
+        JLabel ferris2special = new JLabel(cards.ferris2special);
+        JLabel ferris3special = new JLabel(cards.ferris3special);
+        JLabel ferris4special = new JLabel(cards.ferris4special);
 
         addComponent(rightPanel, ferris, gbc, 0, 2,true, false, ferris1special, ferris1rank, ferris1price, Color.RED, true, cards.getFerris1(), 0 , "ferris1");
         addComponent(rightPanel, ferris, gbc, 1, 2, true, false, ferris2special, ferris2rank, ferris2price, Color.RED, true, cards.getFerris2(), 0 , "ferris2");
         addComponent(rightPanel, ferris, gbc, 2, 2,true, false, ferris3special, ferris3rank, ferris3price, Color.RED, true, cards.getFerris3(), 0 , "ferris3");
         addComponent(rightPanel, ferris, gbc, 3, 2,true, false, ferris4special, ferris4rank, ferris4price, Color.RED, true, cards.getFerris4(), 0 , "ferris4");
 
-        JLabel coaster1rank = new JLabel("3");
-        JLabel coaster2rank = new JLabel("4");
-        JLabel coaster3rank = new JLabel("4");
-        JLabel coaster4rank= new JLabel("5");
-        JLabel coaster1price = new JLabel("4 Green + 3 Blue");
-        JLabel coaster2price = new JLabel("5 White + 3 Blue ");
-        JLabel coaster3price = new JLabel("4 Red + 3 Black + 2 White");
-        JLabel coaster4price = new JLabel("3 Red + 4 Green + 3 Black");
-        JLabel coaster1special = new JLabel("WHITE");
-        JLabel coaster2special = new JLabel("BLUE");
-        JLabel coaster3special = new JLabel("RED");
-        JLabel coaster4special = new JLabel("BLACK");
+        JLabel coaster1rank = new JLabel(cards.coaster1rank);
+        JLabel coaster2rank = new JLabel(cards.coaster2rank);
+        JLabel coaster3rank = new JLabel(cards.coaster3rank);
+        JLabel coaster4rank= new JLabel(cards.coaster4rank);
+        JLabel coaster1price = new JLabel(cards.coaster1price);
+        JLabel coaster2price = new JLabel(cards.coaster2price);
+        JLabel coaster3price = new JLabel(cards.coaster3price);
+        JLabel coaster4price = new JLabel(cards.coaster4price);
+        JLabel coaster1special = new JLabel(cards.coaster1special);
+        JLabel coaster2special = new JLabel(cards.coaster2special);
+        JLabel coaster3special = new JLabel(cards.coaster3special);
+        JLabel coaster4special = new JLabel(cards.coaster4special);
 
         addComponent(rightPanel, coaster, gbc, 0, 3,true, false, coaster1special, coaster1rank, coaster1price, Color.DARK_GRAY, true, cards.getCoaster1(), 0, "coaster1");
         addComponent(rightPanel, coaster, gbc, 1, 3,true, false, coaster2special, coaster2rank, coaster2price, Color.DARK_GRAY, true, cards.getCoaster2(), 0, "coaster2");
@@ -222,10 +222,12 @@ public class Main extends JFrame {
         addComponent(rightPanel, green, gbc, 2, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getGreen(), "green");
         addComponent(rightPanel, blue, gbc, 3, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getBlue(), "blue");
         addComponent(rightPanel, red, gbc, 4, 4,false, false, special, special ,special, Color.BLACK, false, 0, coins.getRed(), "red");
-        JButton button1 = new JButton("Buy reserve1");
+        JButton button1 = new JButton("Buy Reserve '1'");
         gbc.gridx=0;
         gbc.gridy=5;
         button1.setForeground(Color.red);
+        button1.setOpaque(true);
+        button1.setBackground(Color.pink);
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -253,10 +255,12 @@ public class Main extends JFrame {
             }
         });
         rightPanel.add(button1,gbc);
-        JButton button2 = new JButton("Buy Reserve2");
+        JButton button2 = new JButton("Buy Reserve '2'");
         gbc.gridx=1;
         gbc.gridy=5;
         button2.setForeground(Color.red);
+        button2.setOpaque(true);
+        button2.setBackground(Color.pink);
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -284,10 +288,12 @@ public class Main extends JFrame {
             }
         });
         rightPanel.add(button2,gbc);
-        JButton button3 = new JButton("Buy reserve3");
+        JButton button3 = new JButton("Buy Reserve '3'");
         gbc.gridx=2;
         gbc.gridy=5;
         button3.setForeground(Color.red);
+        button3.setOpaque(true);
+        button3.setBackground(Color.pink);
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
