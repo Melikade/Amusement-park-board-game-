@@ -222,11 +222,2843 @@ public class Main extends JFrame {
         addComponent(rightPanel, green, gbc, 2, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getGreen(), "green");
         addComponent(rightPanel, blue, gbc, 3, 4,false, false, special, special, special, Color.BLACK, false, 0, coins.getBlue(), "blue");
         addComponent(rightPanel, red, gbc, 4, 4,false, false, special, special ,special, Color.BLACK, false, 0, coins.getRed(), "red");
-
+        JButton button1 = new JButton("Buy reserve1");
+        gbc.gridx=0;
+        gbc.gridy=5;
+        button1.setForeground(Color.red);
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(player.turnPlayer%2==1){
+                    reserveBuy(player1);
+                }
+                else{
+                    reserveBuy(player2);
+                }
+                coin1.setText("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
+                specialCoins1.setText("Special coins: "+"Green="+player1.greenSpecCoin+", White="+player1.whiteSpecCoin+", Black="+player1.blackSpecCoin+", red="+player1.redSpecCoin+", blue="+player1.blueSpecCoin+", Gold="+player1.goldCoin+" ");
+                reservation1.setText("Reserves:(Rank SpecialCoin)" +player1.reserveRank[0]+" "+ player1.reserveSpecial[0]+","+player1.reserveRank[1]+" "+ player1.reserveSpecial[1]+","+player1.reserveRank[2]+" "+ player1.reserveSpecial[2]+" ");
+                points1.setText("Points:"+player1.getPoints());
+                numCard1.setText("Number of cards="+player1.getNumOfCards());
+                coin2.setText("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
+                specialCoins2.setText("Special coins: "+"Green="+player2.greenSpecCoin+", White="+player2.whiteSpecCoin+", Black="+player2.blackSpecCoin+", red="+player2.redSpecCoin+", blue="+player2.blueSpecCoin+", Gold="+player2.goldCoin+" ");
+                reservation2.setText("Reserves:(Rank SpecialCoin)" +player2.reserveRank[0]+" "+ player2.reserveSpecial[0]+","+player2.reserveRank[1]+" "+ player2.reserveSpecial[1]+","+player2.reserveRank[2]+" "+ player2.reserveSpecial[2]+" ");
+                points2.setText("Points:"+player2.getPoints());
+                numCard2.setText("Number of cards="+player2.getNumOfCards());
+                underMachLabel1.setText(" Remaining coins = "+coins.getBlack());
+                underMachLabel2.setText(" Remaining coins = "+coins.getWhite());
+                underMachLabel3.setText(" Remaining coins = "+coins.getGreen());
+                underMachLabel4.setText(" Remaining coins = "+coins.getBlue());
+                underMachLabel5.setText(" Remaining coins = "+coins.getRed());
+            }
+        });
+        rightPanel.add(button1,gbc);
+        JButton button2 = new JButton("Buy Reserve2");
+        gbc.gridx=1;
+        gbc.gridy=5;
+        button2.setForeground(Color.red);
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(player.turnPlayer%2==1){
+                    reserveBuy2(player1);
+                }
+                else{
+                    reserveBuy2(player2);
+                }
+                coin1.setText("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
+                specialCoins1.setText("Special coins: "+"Green="+player1.greenSpecCoin+", White="+player1.whiteSpecCoin+", Black="+player1.blackSpecCoin+", red="+player1.redSpecCoin+", blue="+player1.blueSpecCoin+", Gold="+player1.goldCoin+" ");
+                reservation1.setText("Reserves:(Rank SpecialCoin)" +player1.reserveRank[0]+" "+ player1.reserveSpecial[0]+","+player1.reserveRank[1]+" "+ player1.reserveSpecial[1]+","+player1.reserveRank[2]+" "+ player1.reserveSpecial[2]+" ");
+                points1.setText("Points:"+player1.getPoints());
+                numCard1.setText("Number of cards="+player1.getNumOfCards());
+                coin2.setText("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
+                specialCoins2.setText("Special coins: "+"Green="+player2.greenSpecCoin+", White="+player2.whiteSpecCoin+", Black="+player2.blackSpecCoin+", red="+player2.redSpecCoin+", blue="+player2.blueSpecCoin+", Gold="+player2.goldCoin+" ");
+                reservation2.setText("Reserves:(Rank SpecialCoin)" +player2.reserveRank[0]+" "+ player2.reserveSpecial[0]+","+player2.reserveRank[1]+" "+ player2.reserveSpecial[1]+","+player2.reserveRank[2]+" "+ player2.reserveSpecial[2]+" ");
+                points2.setText("Points:"+player2.getPoints());
+                numCard2.setText("Number of cards="+player2.getNumOfCards());
+                underMachLabel1.setText(" Remaining coins = "+coins.getBlack());
+                underMachLabel2.setText(" Remaining coins = "+coins.getWhite());
+                underMachLabel3.setText(" Remaining coins = "+coins.getGreen());
+                underMachLabel4.setText(" Remaining coins = "+coins.getBlue());
+                underMachLabel5.setText(" Remaining coins = "+coins.getRed());
+            }
+        });
+        rightPanel.add(button2,gbc);
+        JButton button3 = new JButton("Buy reserve3");
+        gbc.gridx=2;
+        gbc.gridy=5;
+        button3.setForeground(Color.red);
+        button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(player.turnPlayer%2==1){
+                    reserveBuy3(player1);
+                }
+                else{
+                    reserveBuy3(player2);
+                }
+                coin1.setText("Coins: "+"Green="+player1.greenRegCoin+", White="+player1.whiteRegCoin+", Black="+player1.blackRegCoin+", red="+player1.redRegCoin+", blue="+player1.blueRegCoin+" ");
+                specialCoins1.setText("Special coins: "+"Green="+player1.greenSpecCoin+", White="+player1.whiteSpecCoin+", Black="+player1.blackSpecCoin+", red="+player1.redSpecCoin+", blue="+player1.blueSpecCoin+", Gold="+player1.goldCoin+" ");
+                reservation1.setText("Reserves:(Rank SpecialCoin)" +player1.reserveRank[0]+" "+ player1.reserveSpecial[0]+","+player1.reserveRank[1]+" "+ player1.reserveSpecial[1]+","+player1.reserveRank[2]+" "+ player1.reserveSpecial[2]+" ");
+                points1.setText("Points:"+player1.getPoints());
+                numCard1.setText("Number of cards="+player1.getNumOfCards());
+                coin2.setText("Coins: "+"Green="+player2.greenRegCoin+", White="+player2.whiteRegCoin+", Black="+player2.blackRegCoin+", red="+player2.redRegCoin+", blue="+player2.blueRegCoin+" ");
+                specialCoins2.setText("Special coins: "+"Green="+player2.greenSpecCoin+", White="+player2.whiteSpecCoin+", Black="+player2.blackSpecCoin+", red="+player2.redSpecCoin+", blue="+player2.blueSpecCoin+", Gold="+player2.goldCoin+" ");
+                reservation2.setText("Reserves:(Rank SpecialCoin)" +player2.reserveRank[0]+" "+ player2.reserveSpecial[0]+","+player2.reserveRank[1]+" "+ player2.reserveSpecial[1]+","+player2.reserveRank[2]+" "+ player2.reserveSpecial[2]+" ");
+                points2.setText("Points:"+player2.getPoints());
+                numCard2.setText("Number of cards="+player2.getNumOfCards());
+                underMachLabel1.setText(" Remaining coins = "+coins.getBlack());
+                underMachLabel2.setText(" Remaining coins = "+coins.getWhite());
+                underMachLabel3.setText(" Remaining coins = "+coins.getGreen());
+                underMachLabel4.setText(" Remaining coins = "+coins.getBlue());
+                underMachLabel5.setText(" Remaining coins = "+coins.getRed());
+            }
+        });
+        rightPanel.add(button3,gbc);
         rightPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         add(rightPanel, BorderLayout.EAST);
     }
 
+    private void reserveArray(player player1){
+        player1.reservePrice[0]=player1.reservePrice[1];
+        player1.reserveRank[0]=player1.reserveRank[1];
+        player1.reserveSpecial[0]=player1.reserveSpecial[1];
+        player1.reservePrice[1]=player1.reservePrice[2];
+        player1.reserveRank[1]=player1.reserveRank[2];
+        player1.reserveSpecial[1]=player1.reserveSpecial[2];
+        player1.reservePrice[2]=null;
+        player1.reserveRank[2]=0;
+        player1.reserveSpecial[2]=null;
+    }
+    private void reserveArray2(player player1){
+        player1.reservePrice[1]=player1.reservePrice[2];
+        player1.reserveRank[1]=player1.reserveRank[2];
+        player1.reserveSpecial[1]=player1.reserveSpecial[2];
+        player1.reservePrice[2]=null;
+        player1.reserveRank[2]=0;
+        player1.reserveSpecial[2]=null;
+    }
+    private void reserveArray3(player player1){
+        player1.reservePrice[2]=null;
+        player1.reserveRank[2]=0;
+        player1.reserveSpecial[2]=null;
+    }
+
+    private void reserveBuy(player player1){
+        if(player1.reservePrice[0]==null){
+            JOptionPane.showMessageDialog(Main.this,"You haven't reserved a card yet");
+        }
+        else if(player1.reservePrice[0]==null){
+            JOptionPane.showMessageDialog(Main.this,"You haven't reserved a card yet");
+        }
+        else if(player1.reservePrice[0].equals("4 Red")){
+            if(player1.redRegCoin>=4){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.redRegCoin -=4;
+                int coin =coins.getRed();
+                coin +=4;
+                coins.setRed(coin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if (player1.redSpecCoin+player1.redRegCoin>=4){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                int coin =coins.getRed();
+                coin +=player1.redRegCoin;
+                coins.setRed(coin);
+                player1.redRegCoin =0;
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=4){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                int coin =coins.getRed();
+                coin +=player1.redRegCoin;
+                coins.setRed(coin);
+                player1.goldCoin -= (4-player1.redRegCoin);
+                int gold = coins.getGold();
+                gold += (4-player1.redRegCoin);
+                coins.setGold(gold);
+                player1.redRegCoin =0;
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+
+        else if(player1.reservePrice[0].equals("2 White + 3 Blue")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 1;
+                player1.setPoints(point);
+                player1.whiteRegCoin -=2;
+                player1.blueRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin+=2;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.blueRegCoin+player1.goldCoin>=3 && player1.whiteRegCoin+player1.goldCoin>=2){
+                int point = player1.getPoints();
+                point += 1;
+                player1.setPoints(point);
+                player1.whiteRegCoin -=2;
+                player1.blueRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin+=2;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setGreenRegCoin(player1.whiteRegCoin);
+                player1.setBlackRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+
+        else if(player1.reservePrice[0].equals("1 Green + 5 Black")){
+            if(player1.greenRegCoin+player1.greenSpecCoin>=1 && player1.blackRegCoin+player1.blackSpecCoin>=5){
+                int point = player1.getPoints();
+                point += 1;
+                player1.setPoints(point);
+                player1.greenRegCoin -=1;
+                player1.blackRegCoin -=5;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+1);
+                else
+                    coin+=2;
+                coins.setGreen(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+5);
+                else
+                    coin +=5;
+                coins.setBlack(coin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.blackRegCoin+player1.goldCoin>=5 && player1.greenRegCoin+player1.goldCoin>=1){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.greenRegCoin -=1;
+                player1.blackRegCoin -=5;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+1);
+                else
+                    coin+=1;
+                coins.setGreen(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+5);
+                else
+                    coin +=5;
+                coins.setBlack(coin);
+                int gold = coins.getGold();
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setWhiteRegCoin(player1.greenRegCoin);
+                player1.setBlueRegCoin(player1.blackRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[0].equals("2 Red + 2 Green")){
+            if(player1.redRegCoin+player1.redSpecCoin>=2 && player1.greenRegCoin+player1.greenSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.greenRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+2);
+                else
+                    coin +=2;
+                coins.setGreen(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.greenRegCoin+player1.goldCoin>=2 && player1.redRegCoin+player1.goldCoin>=2){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.greenRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+3);
+                else
+                    coin +=2;
+                coins.setGreen(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[0].equals("2 Red + 2 Blue + 2 White")){
+            if(player1.redRegCoin+player1.redSpecCoin>=2 && player1.blueRegCoin+player1.blueSpecCoin>=2 && player1.whiteRegCoin+player1.whiteSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.blueRegCoin -=2;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+2);
+                else
+                    coin +=2;
+                coins.setBlue(coin);
+                coin = coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=2 && player1.whiteRegCoin+player1.goldCoin>=2 && player1.blueRegCoin+player1.goldCoin>=2){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.blueRegCoin -=2;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+2);
+                else
+                    coin +=2;
+                coins.setBlue(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+        }
+        else if(player1.reservePrice[0].equals("6 Black + 2 Green")){
+            if(player1.blackRegCoin+player1.blackSpecCoin>=6 && player1.greenRegCoin+player1.greenSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 3;
+                player1.setPoints(point);
+                player1.blackRegCoin -=6;
+                player1.greenRegCoin -=2;
+                int coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+6);
+                else
+                    coin+=6;
+                coins.setBlack(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+2);
+                else
+                    coin +=2;
+                coins.setGreen(coin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.greenRegCoin+player1.goldCoin>=2 && player1.blackRegCoin+player1.goldCoin>=6){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.blackRegCoin -=6;
+                player1.greenRegCoin -=2;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+2);
+                else
+                    coin+=2;
+                coins.setGreen(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+6);
+                else
+                    coin +=6;
+                coins.setBlack(coin);
+                int gold = coins.getGold();
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[0].equals("4 Blue + 3 White")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=4 && player1.whiteRegCoin+player1.whiteSpecCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=4;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+4);
+                else
+                    coin+=4;
+                coins.setBlue(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin +=3;
+                coins.setWhite(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.whiteRegCoin+player1.goldCoin>=3 && player1.blueRegCoin+player1.goldCoin>=4){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=4;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin+=3;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+4);
+                else
+                    coin +=4;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[0].equals("3 Red + 3 White")){
+            if(player1.redRegCoin+player1.redSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=3){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin+=3;
+                coins.setRed(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin +=3;
+                coins.setWhite(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.whiteRegCoin+player1.goldCoin>=3 && player1.redRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin+=3;
+                coins.setWhite(coin);
+                coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin +=3;
+                coins.setRed(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[0].equals("4 Green + 3 Blue")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=3 && player1.greenRegCoin+player1.greenSpecCoin>=4){
+                int point = player1.getPoints();
+                point += 3;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin+=3;
+                coins.setBlue(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+4);
+                else
+                    coin +=4;
+                coins.setGreen(coin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.greenRegCoin+player1.goldCoin>=4 && player1.blueRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 3;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.whiteRegCoin+4);
+                else
+                    coin+=4;
+                coins.setGreen(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[0].equals("5 White + 3 Blue")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=5){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.whiteRegCoin -=5;
+                int coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin+=3;
+                coins.setBlue(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+5);
+                else
+                    coin +=5;
+                coins.setWhite(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.whiteRegCoin+player1.goldCoin>=5 && player1.blueRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.whiteRegCoin -=5;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+5);
+                else
+                    coin+=5;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[0].equals("4 Red + 3 Black + 2 White")){
+            if(player1.redRegCoin+player1.redSpecCoin>=4 && player1.blackRegCoin+player1.blackSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.redRegCoin -=4;
+                player1.blackRegCoin -=3;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+4);
+                else
+                    coin+=4;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin = coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=4 && player1.whiteRegCoin+player1.goldCoin>=2 && player1.blackRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.redRegCoin -=4;
+                player1.blackRegCoin -=3;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+4);
+                else
+                    coin+=4;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[0].equals("3 Red + 4 Green + 3 Black")){
+            if(player1.redRegCoin+player1.redSpecCoin>=3 && player1.blackRegCoin+player1.blackSpecCoin>=3 && player1.greenRegCoin+player1.greenSpecCoin>=4){
+                int point = player1.getPoints();
+                point += 5;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.blackRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin+=3;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin = coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+4);
+                else
+                    coin +=4;
+                coins.setGreen(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=3 && player1.greenRegCoin+player1.goldCoin>=4 && player1.blackRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.blackRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin+=3;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+4);
+                else
+                    coin +=4;
+                coins.setGreen(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+    }
+    private void reserveBuy2(player player1){
+        if(player1.reservePrice[1]==null){
+            JOptionPane.showMessageDialog(Main.this,"You haven't reserved a card yet");
+        }
+        else if(player1.reservePrice[1].equals("4 Red")){
+            if(player1.redRegCoin>=4){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.redRegCoin -=4;
+                int coin =coins.getRed();
+                coin +=4;
+                coins.setRed(coin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if (player1.redSpecCoin+player1.redRegCoin>=4){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                int coin =coins.getRed();
+                coin +=player1.redRegCoin;
+                coins.setRed(coin);
+                player1.redRegCoin =0;
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=4){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                int coin =coins.getRed();
+                coin +=player1.redRegCoin;
+                coins.setRed(coin);
+                player1.goldCoin -= (4-player1.redRegCoin);
+                int gold = coins.getGold();
+                gold += (4-player1.redRegCoin);
+                coins.setGold(gold);
+                player1.redRegCoin =0;
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+
+        else if(player1.reservePrice[1].equals("2 White + 3 Blue")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 1;
+                player1.setPoints(point);
+                player1.whiteRegCoin -=2;
+                player1.blueRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin+=2;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.blueRegCoin+player1.goldCoin>=3 && player1.whiteRegCoin+player1.goldCoin>=2){
+                int point = player1.getPoints();
+                point += 1;
+                player1.setPoints(point);
+                player1.whiteRegCoin -=2;
+                player1.blueRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin+=2;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setGreenRegCoin(player1.whiteRegCoin);
+                player1.setBlackRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+
+        else if(player1.reservePrice[1].equals("1 Green + 5 Black")){
+            if(player1.greenRegCoin+player1.greenSpecCoin>=1 && player1.blackRegCoin+player1.blackSpecCoin>=5){
+                int point = player1.getPoints();
+                point += 1;
+                player1.setPoints(point);
+                player1.greenRegCoin -=1;
+                player1.blackRegCoin -=5;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+1);
+                else
+                    coin+=2;
+                coins.setGreen(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+5);
+                else
+                    coin +=5;
+                coins.setBlack(coin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.blackRegCoin+player1.goldCoin>=5 && player1.greenRegCoin+player1.goldCoin>=1){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.greenRegCoin -=1;
+                player1.blackRegCoin -=5;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+1);
+                else
+                    coin+=1;
+                coins.setGreen(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+5);
+                else
+                    coin +=5;
+                coins.setBlack(coin);
+                int gold = coins.getGold();
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setWhiteRegCoin(player1.greenRegCoin);
+                player1.setBlueRegCoin(player1.blackRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[1].equals("2 Red + 2 Green")){
+            if(player1.redRegCoin+player1.redSpecCoin>=2 && player1.greenRegCoin+player1.greenSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.greenRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+2);
+                else
+                    coin +=2;
+                coins.setGreen(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.greenRegCoin+player1.goldCoin>=2 && player1.redRegCoin+player1.goldCoin>=2){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.greenRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+3);
+                else
+                    coin +=2;
+                coins.setGreen(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[1].equals("2 Red + 2 Blue + 2 White")){
+            if(player1.redRegCoin+player1.redSpecCoin>=2 && player1.blueRegCoin+player1.blueSpecCoin>=2 && player1.whiteRegCoin+player1.whiteSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.blueRegCoin -=2;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+2);
+                else
+                    coin +=2;
+                coins.setBlue(coin);
+                coin = coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=2 && player1.whiteRegCoin+player1.goldCoin>=2 && player1.blueRegCoin+player1.goldCoin>=2){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.blueRegCoin -=2;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+2);
+                else
+                    coin +=2;
+                coins.setBlue(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[1].equals("6 Black + 2 Green")){
+            if(player1.blackRegCoin+player1.blackSpecCoin>=6 && player1.greenRegCoin+player1.greenSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 3;
+                player1.setPoints(point);
+                player1.blackRegCoin -=6;
+                player1.greenRegCoin -=2;
+                int coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+6);
+                else
+                    coin+=6;
+                coins.setBlack(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+2);
+                else
+                    coin +=2;
+                coins.setGreen(coin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.greenRegCoin+player1.goldCoin>=2 && player1.blackRegCoin+player1.goldCoin>=6){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.blackRegCoin -=6;
+                player1.greenRegCoin -=2;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+2);
+                else
+                    coin+=2;
+                coins.setGreen(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+6);
+                else
+                    coin +=6;
+                coins.setBlack(coin);
+                int gold = coins.getGold();
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[1].equals("4 Blue + 3 White")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=4 && player1.whiteRegCoin+player1.whiteSpecCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=4;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+4);
+                else
+                    coin+=4;
+                coins.setBlue(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin +=3;
+                coins.setWhite(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.whiteRegCoin+player1.goldCoin>=3 && player1.blueRegCoin+player1.goldCoin>=4){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=4;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin+=3;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+4);
+                else
+                    coin +=4;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[1].equals("3 Red + 3 White")){
+            if(player1.redRegCoin+player1.redSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=3){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin+=3;
+                coins.setRed(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin +=3;
+                coins.setWhite(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.whiteRegCoin+player1.goldCoin>=3 && player1.redRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin+=3;
+                coins.setWhite(coin);
+                coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin +=3;
+                coins.setRed(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[1].equals("4 Green + 3 Blue")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=3 && player1.greenRegCoin+player1.greenSpecCoin>=4){
+                int point = player1.getPoints();
+                point += 3;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin+=3;
+                coins.setBlue(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+4);
+                else
+                    coin +=4;
+                coins.setGreen(coin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.greenRegCoin+player1.goldCoin>=4 && player1.blueRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 3;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.whiteRegCoin+4);
+                else
+                    coin+=4;
+                coins.setGreen(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[1].equals("5 White + 3 Blue")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=5){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.whiteRegCoin -=5;
+                int coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin+=3;
+                coins.setBlue(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+5);
+                else
+                    coin +=5;
+                coins.setWhite(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.whiteRegCoin+player1.goldCoin>=5 && player1.blueRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.whiteRegCoin -=5;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+5);
+                else
+                    coin+=5;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[1].equals("4 Red + 3 Black + 2 White")){
+            if(player1.redRegCoin+player1.redSpecCoin>=4 && player1.blackRegCoin+player1.blackSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.redRegCoin -=4;
+                player1.blackRegCoin -=3;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+4);
+                else
+                    coin+=4;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin = coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=4 && player1.whiteRegCoin+player1.goldCoin>=2 && player1.blackRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.redRegCoin -=4;
+                player1.blackRegCoin -=3;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+4);
+                else
+                    coin+=4;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[1].equals("3 Red + 4 Green + 3 Black")){
+            if(player1.redRegCoin+player1.redSpecCoin>=3 && player1.blackRegCoin+player1.blackSpecCoin>=3 && player1.greenRegCoin+player1.greenSpecCoin>=4){
+                int point = player1.getPoints();
+                point += 5;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.blackRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin+=3;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin = coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+4);
+                else
+                    coin +=4;
+                coins.setGreen(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=3 && player1.greenRegCoin+player1.goldCoin>=4 && player1.blackRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.blackRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin+=3;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+4);
+                else
+                    coin +=4;
+                coins.setGreen(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray2(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+    }
+    private void reserveBuy3(player player1){
+        if(player1.reservePrice[2]==null){
+            JOptionPane.showMessageDialog(Main.this,"You haven't reserved a card yet");
+        }
+        else if(player1.reservePrice[2].equals("4 Red")){
+            if(player1.redRegCoin>=4){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.redRegCoin -=4;
+                int coin =coins.getRed();
+                coin +=4;
+                coins.setRed(coin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if (player1.redSpecCoin+player1.redRegCoin>=4){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                int coin =coins.getRed();
+                coin +=player1.redRegCoin;
+                coins.setRed(coin);
+                player1.redRegCoin =0;
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=4){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                int coin =coins.getRed();
+                coin +=player1.redRegCoin;
+                coins.setRed(coin);
+                player1.goldCoin -= (4-player1.redRegCoin);
+                int gold = coins.getGold();
+                gold += (4-player1.redRegCoin);
+                coins.setGold(gold);
+                player1.redRegCoin =0;
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+
+        else if(player1.reservePrice[2].equals("2 White + 3 Blue")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 1;
+                player1.setPoints(point);
+                player1.whiteRegCoin -=2;
+                player1.blueRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin+=2;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.blueRegCoin+player1.goldCoin>=3 && player1.whiteRegCoin+player1.goldCoin>=2){
+                int point = player1.getPoints();
+                point += 1;
+                player1.setPoints(point);
+                player1.whiteRegCoin -=2;
+                player1.blueRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin+=2;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setGreenRegCoin(player1.whiteRegCoin);
+                player1.setBlackRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+
+        else if(player1.reservePrice[2].equals("1 Green + 5 Black")){
+            if(player1.greenRegCoin+player1.greenSpecCoin>=1 && player1.blackRegCoin+player1.blackSpecCoin>=5){
+                int point = player1.getPoints();
+                point += 1;
+                player1.setPoints(point);
+                player1.greenRegCoin -=1;
+                player1.blackRegCoin -=5;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+1);
+                else
+                    coin+=2;
+                coins.setGreen(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+5);
+                else
+                    coin +=5;
+                coins.setBlack(coin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.blackRegCoin+player1.goldCoin>=5 && player1.greenRegCoin+player1.goldCoin>=1){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.greenRegCoin -=1;
+                player1.blackRegCoin -=5;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+1);
+                else
+                    coin+=1;
+                coins.setGreen(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+5);
+                else
+                    coin +=5;
+                coins.setBlack(coin);
+                int gold = coins.getGold();
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setWhiteRegCoin(player1.greenRegCoin);
+                player1.setBlueRegCoin(player1.blackRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[2].equals("2 Red + 2 Green")){
+            if(player1.redRegCoin+player1.redSpecCoin>=2 && player1.greenRegCoin+player1.greenSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.greenRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+2);
+                else
+                    coin +=2;
+                coins.setGreen(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.greenRegCoin+player1.goldCoin>=2 && player1.redRegCoin+player1.goldCoin>=2){
+                int point = player1.getPoints();
+                point += 0;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.greenRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+3);
+                else
+                    coin +=2;
+                coins.setGreen(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[2].equals("2 Red + 2 Blue + 2 White")){
+            if(player1.redRegCoin+player1.redSpecCoin>=2 && player1.blueRegCoin+player1.blueSpecCoin>=2 && player1.whiteRegCoin+player1.whiteSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.blueRegCoin -=2;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+2);
+                else
+                    coin +=2;
+                coins.setBlue(coin);
+                coin = coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=2 && player1.whiteRegCoin+player1.goldCoin>=2 && player1.blueRegCoin+player1.goldCoin>=2){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=2;
+                player1.blueRegCoin -=2;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+2);
+                else
+                    coin+=2;
+                coins.setRed(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+2);
+                else
+                    coin +=2;
+                coins.setBlue(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[2].equals("6 Black + 2 Green")){
+            if(player1.blackRegCoin+player1.blackSpecCoin>=6 && player1.greenRegCoin+player1.greenSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 3;
+                player1.setPoints(point);
+                player1.blackRegCoin -=6;
+                player1.greenRegCoin -=2;
+                int coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+6);
+                else
+                    coin+=6;
+                coins.setBlack(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+2);
+                else
+                    coin +=2;
+                coins.setGreen(coin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.greenRegCoin+player1.goldCoin>=2 && player1.blackRegCoin+player1.goldCoin>=6){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.blackRegCoin -=6;
+                player1.greenRegCoin -=2;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+2);
+                else
+                    coin+=2;
+                coins.setGreen(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+6);
+                else
+                    coin +=6;
+                coins.setBlack(coin);
+                int gold = coins.getGold();
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[2].equals("4 Blue + 3 White")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=4 && player1.whiteRegCoin+player1.whiteSpecCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=4;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+4);
+                else
+                    coin+=4;
+                coins.setBlue(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin +=3;
+                coins.setWhite(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.whiteRegCoin+player1.goldCoin>=3 && player1.blueRegCoin+player1.goldCoin>=4){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=4;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin+=3;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+4);
+                else
+                    coin +=4;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.greenSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[2].equals("3 Red + 3 White")){
+            if(player1.redRegCoin+player1.redSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=3){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin+=3;
+                coins.setRed(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin +=3;
+                coins.setWhite(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.whiteRegCoin+player1.goldCoin>=3 && player1.redRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 2;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.whiteRegCoin -=3;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+3);
+                else
+                    coin+=3;
+                coins.setWhite(coin);
+                coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin +=3;
+                coins.setRed(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[2].equals("4 Green + 3 Blue")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=3 && player1.greenRegCoin+player1.greenSpecCoin>=4){
+                int point = player1.getPoints();
+                point += 3;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin+=3;
+                coins.setBlue(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+4);
+                else
+                    coin +=4;
+                coins.setGreen(coin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.greenRegCoin+player1.goldCoin>=4 && player1.blueRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 3;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.whiteRegCoin+4);
+                else
+                    coin+=4;
+                coins.setGreen(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.whiteSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[2].equals("5 White + 3 Blue")){
+            if(player1.blueRegCoin+player1.blueSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=5){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.whiteRegCoin -=5;
+                int coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin+=3;
+                coins.setBlue(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+5);
+                else
+                    coin +=5;
+                coins.setWhite(coin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.whiteRegCoin+player1.goldCoin>=5 && player1.blueRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.blueRegCoin -=3;
+                player1.whiteRegCoin -=5;
+                int coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+5);
+                else
+                    coin+=5;
+                coins.setWhite(coin);
+                coin =coins.getBlue();
+                if(player1.blueRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlue(coin);
+                int gold = coins.getGold();
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                if(player1.blueRegCoin<0){
+                    gold += (-player1.blueRegCoin);
+                    player1.goldCoin -= (-player1.blueRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlueRegCoin(player1.blueRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blueSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[2].equals("4 Red + 3 Black + 2 White")){
+            if(player1.redRegCoin+player1.redSpecCoin>=4 && player1.blackRegCoin+player1.blackSpecCoin>=3 && player1.whiteRegCoin+player1.whiteSpecCoin>=2){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.redRegCoin -=4;
+                player1.blackRegCoin -=3;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+4);
+                else
+                    coin+=4;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin = coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=4 && player1.whiteRegCoin+player1.goldCoin>=2 && player1.blackRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.redRegCoin -=4;
+                player1.blackRegCoin -=3;
+                player1.whiteRegCoin -=2;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+4);
+                else
+                    coin+=4;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin =coins.getWhite();
+                if(player1.whiteRegCoin<0)
+                    coin +=(player1.whiteRegCoin+2);
+                else
+                    coin +=2;
+                coins.setWhite(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                if(player1.whiteRegCoin<0){
+                    gold += (-player1.whiteRegCoin);
+                    player1.goldCoin -= (-player1.whiteRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setWhiteRegCoin(player1.whiteRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.redSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+        else if(player1.reservePrice[2].equals("3 Red + 4 Green + 3 Black")){
+            if(player1.redRegCoin+player1.redSpecCoin>=3 && player1.blackRegCoin+player1.blackSpecCoin>=3 && player1.greenRegCoin+player1.greenSpecCoin>=4){
+                int point = player1.getPoints();
+                point += 5;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.blackRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin+=3;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blueRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin = coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+4);
+                else
+                    coin +=4;
+                coins.setGreen(coin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else if(player1.redRegCoin+player1.goldCoin>=3 && player1.greenRegCoin+player1.goldCoin>=4 && player1.blackRegCoin+player1.goldCoin>=3){
+                int point = player1.getPoints();
+                point += 4;
+                player1.setPoints(point);
+                player1.redRegCoin -=3;
+                player1.blackRegCoin -=3;
+                player1.greenRegCoin -=4;
+                int coin =coins.getRed();
+                if(player1.redRegCoin<0)
+                    coin +=(player1.redRegCoin+3);
+                else
+                    coin+=3;
+                coins.setRed(coin);
+                coin =coins.getBlack();
+                if(player1.blackRegCoin<0)
+                    coin +=(player1.blackRegCoin+3);
+                else
+                    coin +=3;
+                coins.setBlack(coin);
+                coin =coins.getGreen();
+                if(player1.greenRegCoin<0)
+                    coin +=(player1.greenRegCoin+4);
+                else
+                    coin +=4;
+                coins.setGreen(coin);
+                int gold = coins.getGold();
+                if(player1.redRegCoin<0){
+                    gold += (-player1.redRegCoin);
+                    player1.goldCoin -= (-player1.redRegCoin);
+                }
+                if(player1.blackRegCoin<0){
+                    gold += (-player1.blackRegCoin);
+                    player1.goldCoin -= (-player1.blackRegCoin);
+                }
+                if(player1.greenRegCoin<0){
+                    gold += (-player1.greenRegCoin);
+                    player1.goldCoin -= (-player1.greenRegCoin);
+                }
+                coins.setGold(gold);
+                player1.setBlackRegCoin(player1.blackRegCoin);
+                player1.setRedRegCoin(player1.redRegCoin);
+                player1.setGreenRegCoin(player1.greenRegCoin);
+                int num = player1.getNumOfCards();
+                num++;
+                player1.setNumOfCards(num);
+                player1.blackSpecCoin++;
+                player.turnPlayer++;
+                turn_player.setText("PLAYER "+player.showPlayerTurn()+"'S TURN");
+                reserveArray3(player1);
+            }
+            else{
+                JOptionPane.showMessageDialog(Main.this,"You dont have enough coins to buy this card!");
+            }
+        }
+    }
     private void addComponent(JPanel panel, ImageIcon icon, GridBagConstraints gbc, int x, int y, boolean m, boolean j, JLabel specialCoin, JLabel rank, JLabel price, Color color, boolean cardOrMach, int cardRemaining, int coinRemaining, String cardOrMachInfo) {
         JPanel cardCase = new JPanel(new BorderLayout());
         //making the buttons
@@ -2247,7 +5079,7 @@ public class Main extends JFrame {
 
     //reserve cards functions
     private void cardIdRes(player player1, String cardInfo) {
-        if(player1.getNumOfReserves()==3){
+        if(player1.getNumOfReserves()>=3){
             JOptionPane.showMessageDialog(Main.this,"You have used up all of your reserves!");
         }
         else if(cardInfo.equals("tent1")){
@@ -2488,7 +5320,7 @@ public class Main extends JFrame {
             frame10.setSize(800,800);
             frame10.setVisible(true);
             JLabel question = new JLabel("Player one, please select the coins which you want to return to the slot machine in order to have less than 11 coins");
-            //player1.coinArray();
+            player1.coinArray();
             JButton button0 = new JButton(player1.coinMax10[0]);
             JButton button1 = new JButton(player1.coinMax10[1]);
             JButton button2 = new JButton(player1.coinMax10[2]);
