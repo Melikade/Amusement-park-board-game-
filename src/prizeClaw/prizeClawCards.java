@@ -1,9 +1,9 @@
 package prizeClaw;
 
 public class prizeClawCards {
-    private int claw1=1;
-    private int claw2=1;
-    private int claw3=1;
+    private int claw1 = 1;
+    private int claw2 = 1;
+    private int claw3 = 1;
 
     public int getClaw1() {
         return claw1;

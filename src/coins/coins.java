@@ -1,20 +1,20 @@
 package coins;
 
 public class coins {
-    private int green=4;
-    private int blue=4;
-    private int black=4;
-    private int white=4;
-    private int red=4;
-    private int gold=5;
+    private int green = 4;
+    private int blue = 4;
+    private int black = 4;
+    private int white = 4;
+    private int red = 4;
+    private int gold = 5;
 
     public int getGreen() {
         return green;
     }
 
     public void setGreen(int green) {
-        if(green<0){
-            green=0;
+        if (green < 0) {
+            green = 0;
         }
         this.green = green;
     }
@@ -24,8 +24,8 @@ public class coins {
     }
 
     public void setBlue(int blue) {
-        if(blue<0){
-            blue=0;
+        if (blue < 0) {
+            blue = 0;
         }
         this.blue = blue;
     }
@@ -35,8 +35,8 @@ public class coins {
     }
 
     public void setBlack(int black) {
-        if(black<0){
-            black=0;
+        if (black < 0) {
+            black = 0;
         }
         this.black = black;
     }
@@ -46,8 +46,8 @@ public class coins {
     }
 
     public void setWhite(int white) {
-        if (white<0){
-            white=0;
+        if (white < 0) {
+            white = 0;
         }
         this.white = white;
     }
@@ -57,8 +57,8 @@ public class coins {
     }
 
     public void setRed(int red) {
-        if (red<0){
-            red=0;
+        if (red < 0) {
+            red = 0;
         }
         this.red = red;
     }
@@ -68,8 +68,8 @@ public class coins {
     }
 
     public void setGold(int gold) {
-        if(gold<0){
-            gold=0;
+        if (gold < 0) {
+            gold = 0;
         }
         this.gold = gold;
     }
