@@ -5,7 +5,7 @@ public class player {
     public int greenRegCoin = 0;
     public int blueRegCoin = 0;
     public int whiteRegCoin = 0;
-    public int blackRegCoin = 0;
+    public int blackRegCoin = 9;
     public int redRegCoin = 0;
     public int greenSpecCoin = 0;
     public int blueSpecCoin = 0;
